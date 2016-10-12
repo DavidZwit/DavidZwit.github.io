@@ -1,0 +1,291 @@
+<!--
+        ▂▃▄▅▆▇█▓▒░░▒▓█▇▆▅▄▃▂
+
+        Awesome you're looking at my code :).
+
+        Yes i made this site without any plug-ins 
+        and yes the banner image is a screenshot of the code that powers this site :)
+
+        I made this site from scratch in an atempt to show off my programming skills so I hope it was worth the offort!
+
+        Take a look around and try to figure out if the JavaScript code is readable or not :p 
+
+        ▂▃▄▅▆▇█▓▒░░▒▓█▇▆▅▄▃▂
+
+
+                ░░░░░░░░░░░░░█████████
+        ░░███████░░░░░░░░░░███▒▒▒▒▒▒▒▒███
+        ░░█▒▒▒▒▒▒█░░░░░░░███▒▒▒▒▒▒▒▒▒▒▒▒▒███
+        ░░░█▒▒▒▒▒▒█░░░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+        ░░░░█▒▒▒▒▒█░░░██▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒███
+        ░░░░░█▒▒▒█░░░█▒▒▒▒▒▒████▒▒▒▒████▒▒▒▒▒▒██
+        ░░░█████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+        ░░░█▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒██
+        ░██▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒██▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██
+        ██▒▒▒███████████▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒▒██
+        █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒████████▒▒▒▒▒▒▒██
+        ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+        ░█▒▒▒███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+        ░██▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
+        ░░████████████░░░█████████████████
+
+        (some random text emoji to stand out :p)
+    -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Portofolio</title>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/profilePicture.jpg" />
+
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Portofolio David">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="David Zwitser" content="Portofolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Own css files -->
+    <link rel="stylesheet" href="css/temp.css">
+    <link rel="stylesheet" href="css/intro.css">
+    <link rel="stylesheet" href="css/standardClasses.css">
+</head>
+
+<body>
+
+    <div id="scrollButtons">
+        <p onclick="scrollWindow(0) ">HOME</p>
+        <p onclick="scrollWindow(1) ">ABOUT</p>
+        <p onclick="scrollWindow(2) "> WORK</p>
+        <p onclick="scrollWindow(3) ">CONTACT</p>
+        <a href="gamePage.html"> GAMES</a>
+
+    </div>
+
+
+
+    <div class="resize " id="banner">
+x
+
+        <div class="center ">
+            <div id="intro">
+                <div class="title ">David Zwitser</div>
+
+                <div class="spaceBetween"></div>
+
+                <img id="profilePicture" src="img/profilePicture.jpg " width="20% ">
+
+                <div class="spaceBetween"></div>
+
+                <div class="subTitle ">Game Developer</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="resize " style="background-color: rgb(103,114,122); ">
+        <div class="center ">
+            <div class="title ">ABOUT</div>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="resize" id="WorkSpace" style="background-color: rgb(105,145,172)  ">
+        <!--
+        <button type="button" class = "WorkShowerButttons"> Left </button>
+        <button type="button" class = "WorkShowerButttons"> Right </button>
+        -->
+        <div class="RotateTiles" onclick="RotateAShower('shower', 0)">
+
+            <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
+                <img src="img/LifeTileImg/64462.jpg">
+                <img src="img/LifeTileImg/20-01_css_snippets_random_ld_img.jpg">
+            </div>
+            <h1>KAAS IS BAAS</h1>
+
+
+        </div>
+
+        <div class="RotateTiles" onclick="RotateAShower('shower', 1)">
+
+
+            <div class="liveTile" onmouseover="nextTile(1, 0)">
+                <img src="img/LifeTileImg/6a00e54f8f86dc883401287636e5db970c-800wi.jpg">
+                <img src="img/LifeTileImg/f_303.jpg">
+                <img src="img/LifeTileImg/head.jpeg">
+            </div>
+
+        </div>
+        <div class="RotateTiles" onclick="RotateAShower('shower', 2)">
+
+
+            <div class="liveTile" onmouseover="nextTile(2, 0)">
+                <img src="img/LifeTileImg/img-dump-012513-003-595x400.jpg">
+                <img src="img/LifeTileImg/IMG_2145.jpg">
+                <img src="img/LifeTileImg/lolfacelisa.png">
+                <img src="img/LifeTileImg/random_natural_acts.jpg">
+            </div>
+
+
+
+
+        </div>
+        <div class="RotateTiles" onclick="RotateAShower('shower', 3)">
+
+
+            <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
+                <img src="img/Astroids//MainScreen.png">
+                <img src="img/Astroids/InGame.png">
+            </div>
+
+           <div class="TitleBox">
+                <h1>Astroids</h1>
+                <p>Try to survive as long as possible by using the pickups provited by the killes you make.</p>
+               
+           </div>
+           
+           <div class="ContentInfo">
+               
+               <p>Time: 3 weeks</p>
+               <p>Team: 3 devs 3 artists</p>
+               <p>Year: 1st year</p>
+               
+           </div>
+
+
+        </div>
+        <div class="RotateTiles" onclick="RotateAShower('shower', 4)">
+            <div class="tileContainer">
+
+
+                <div class="liveTile" onmouseover="nextTile(1, 0)">
+                    <img src="img/LifeTileImg/6a00e54f8f86dc883401287636e5db970c-800wi.jpg">
+                    <img src="img/LifeTileImg/f_303.jpg ">
+                    <img src="img/LifeTileImg/head.jpeg ">
+                </div>
+            </div>
+            <h1>KAAS IS BAAS</h1>
+
+        </div>
+
+        <div class="RotateTiles" onclick="RotateAShower('shower', 5)">
+
+            <div class="liveTile" onmouseover="nextTile(2, 0)">
+                <img src="img/LifeTileImg/img-dump-012513-003-595x400.jpg">
+                <img src="img/LifeTileImg/IMG_2145.jpg ">
+                <img src="img/LifeTileImg/lolfacelisa.png">
+                <img src="img/LifeTileImg/random_natural_acts.jpg">
+            </div>
+            <h1>KAAS IS BAAS</h1>
+
+
+        </div>
+
+
+        <!-- newRotateTils
+
+             <div class="jsShower" onclick="RotateAShower('jsShower', 0)">
+
+                <div class="tileContainer">
+                    <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
+                        <img src="img/LifeTileImg/64462.jpg">
+                        <img src="img/LifeTileImg/20-01_css_snippets_random_ld_img.jpg">
+                    </div>
+                </div>                        <h1>KAAS IS BAAS</h1>
+
+
+            </div>
+
+            <div class="jsShower" onclick="RotateAShower('jsShower', 1)">
+
+                <div class="tileContainer">
+
+                    <div class="liveTile" onmouseover="nextTile(1, 0)">
+                        <img src="img/LifeTileImg/6a00e54f8f86dc883401287636e5db970c-800wi.jpg">
+                        <img src="img/LifeTileImg/f_303.jpg">
+                        <img src="img/LifeTileImg/head.jpeg">
+                    </div>
+                </div>                        <h1>KAAS IS BAAS</h1>
+
+            </div>
+            <div class="jsShower" onclick="RotateAShower('jsShower', 2)">
+
+                <div class="tileContainer">
+
+                    <div class="liveTile" onmouseover="nextTile(2, 0)">
+                        <img src="img/LifeTileImg/img-dump-012513-003-595x400.jpg">
+                        <img src="img/LifeTileImg/IMG_2145.jpg">
+                        <img src="img/LifeTileImg/lolfacelisa.png">
+                        <img src="img/LifeTileImg/random_natural_acts.jpg">
+                    </div>
+                </div>                        <h1>KAAS IS BAAS</h1>
+
+            </div>
+            <div class="jsShower" onclick="RotateAShower('jsShower', 3)">
+
+                <div class="tileContainer">
+
+                    <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
+                        <img src="img/LifeTileImg/64462.jpg ">
+                        <img src="img/LifeTileImg/20-01_css_snippets_random_ld_img.jpg">
+                    </div>
+                </div>
+                                        <h1>KAAS IS BAAS</h1>
+
+                
+            </div>
+            <div class="jsShower" onclick="RotateAShower('jsShower', 4)">
+                <div class="tileContainer">
+
+                    <div class="liveTile" onmouseover="nextTile(1, 0)">
+                        <img src="img/LifeTileImg/6a00e54f8f86dc883401287636e5db970c-800wi.jpg">
+                        <img src="img/LifeTileImg/f_303.jpg ">
+                        <img src="img/LifeTileImg/head.jpeg ">
+                    </div>
+                </div>                        <h1>KAAS IS BAAS</h1>
+
+            </div>
+               
+            <div class="jsShower" onclick="RotateAShower('jsShower', 5)">
+                <div class="tileContainer">
+
+                    <div class="liveTile" onmouseover="nextTile(2, 0)">
+                        <img src="img/LifeTileImg/img-dump-012513-003-595x400.jpg">
+                        <img src="img/LifeTileImg/IMG_2145.jpg ">
+                        <img src="img/LifeTileImg/lolfacelisa.png">
+                        <img src="img/LifeTileImg/random_natural_acts.jpg">
+                    </div>
+                </div>                        <h1>KAAS IS BAAS</h1>
+
+
+            </div>
+             -->
+
+
+    </div>
+
+    <div class="resize " style="background-color: rgb(195,215,223) ">
+        <div class="center ">
+            <div class="title ">
+                CONTACT
+            </div>
+        </div>
+    </div>
+
+
+    <!--Scripts-->
+    <script src="script.js "></script>
+    <script src="js/liveTiles.js"></script>
+    <script src="js/rotatingShower.js"></script>
+    <script src="js/responsiveProfilePicture.js"></script>
+    <script src="js/responsiveNavBar.js"></script>
+    <script src="mainPage.js"></script>
+</body>
+
+</html>
