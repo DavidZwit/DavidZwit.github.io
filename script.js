@@ -21,7 +21,7 @@ function scroll() {
 }
 window.onscroll = scroll;
 
-//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
+//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\    
 
 //----Resize-objects-on-window-resize----\\
 var oldHeight = window.innerHeight;
@@ -58,7 +58,7 @@ OnResize["updateSizes"] = function () {
 
 
 var ScrollVars = {
-    scrollingObjects: {},
+    scrollingObjects: {}
 }
 var idCounter = 0;
 
@@ -83,7 +83,6 @@ function scrollToPos(_obj, _pos, _scrollSmoothness, _doneScrolling) {
 
 //----Scrolling-the-windows----\\
 function scrollWindow(part) {
-    console.log(window.innerHeight * part);
     scrollToPos(document.body, window.innerHeight * part, 10);
 }
 

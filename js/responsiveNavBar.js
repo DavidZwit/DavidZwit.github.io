@@ -13,5 +13,5 @@ var scrollButtons = document.getElementById("scrollButtons");
     }
 }
 
-    OnScroll["navigationButtons"] = updateTopBar;
-    OnResize["navigationButtons"] = updateTopBar;
+OnScroll["navigationButtons"] = updateTopBar;
+OnResize["navigationButtons"] = updateTopBar;

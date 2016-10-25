@@ -4,25 +4,25 @@
 
 var tiles = addObjectsToDict("liveTile");
 var tileAsElement = document.getElementsByClassName("liveTile");
-
-console.log(tileAsElement);
+var sizeRatio = 1.7;
 
 function AddRotator(it) {
 
     it.rotated["liveTiles"] = function () {
         var newHeight = function (tile) {
             //Still need to find a way to calculate good sizes      
-            return 400;
+            return window.innerHeight / 3;
         }
 
         for (var t in tiles) tiles[t].height = newHeight();
 
         for (var i = 0; i < tileAsElement.length; i++) {
             tileAsElement[i].style.height = newHeight() + "px";
-            tileAsElement[i].style.width = newHeight() * 1.7 + "px";
+            tileAsElement[i].style.width = newHeight() * sizeRatio + "px";
         }
     }
 }
+
 
 var c = -1;
 Update["moveTiles"] = function () {

@@ -61,7 +61,7 @@
         <p onclick="scrollWindow(1) ">ABOUT</p>
         <p onclick="scrollWindow(2) "> WORK</p>
         <p onclick="scrollWindow(3) ">CONTACT</p>
-        <a href="gamePage.html"> GAMES</a>
+        <a href="gamePage.html"> MORE GAMES INFO</a>
 
     </div>
 
@@ -89,69 +89,80 @@ x
     <div class="resize " style="background-color: rgb(103,114,122); ">
         <div class="center ">
             <div class="title ">ABOUT</div>
+
+            <div class="AboutText">
+
+            <h1>Full Name:</h1>
+            <p>David Zwitser</p>
+
+            <h1>Title: </h1>
+            <p>Game Developer</p>
+
+            <h1>About:</h1>
+            <p>Hey, I am a junior Game Developer studying at Mediacollege Amsterdam.</p>
+
+            <p>I am looking for an internship in a company with their own engine and maybe a language I don’t yet know. I love learning and understanding difficult techniques technologies to get to know as much as possible. </p>
+            <p>For example I figured out to make a simple 3d renderer and some simple AI’s. I love experimenting and adapt to new situations quite easily.  But also love using the knowledge I have to create awesome systems. </p>
+            <p>You can look around in my portfolio and maybe even take a look at the code powering the website (which I made without any plugins :) )  </p>
+
+            <a href="https://drive.google.com/file/d/0BzDFFP0oYO52RV8yN1QwNXhwbVE/view?usp=sharing">Link to CV</a>
+            </div> 
+
         </div>
-
-
-
 
     </div>
 
     <div class="resize" id="WorkSpace" style="background-color: rgb(105,145,172)  ">
-        <!--
-        <button type="button" class = "WorkShowerButttons"> Left </button>
-        <button type="button" class = "WorkShowerButttons"> Right </button>
-        -->
+
+        <button type="button" class = "RotateLeft" onclick="RotateToNextPanel('shower', 1)"> Left </button>
+        <button type="button" class = "RotateRight" onclick="RotateToNextPanel('shower', -1)"> Right </button>
+        
+
+    
         <div class="RotateTiles" onclick="RotateAShower('shower', 0)">
 
-            <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
-                <img src="img/LifeTileImg/64462.jpg">
-                <img src="img/LifeTileImg/20-01_css_snippets_random_ld_img.jpg">
-            </div>
-            <h1>KAAS IS BAAS</h1>
-
-
-        </div>
-
-        <div class="RotateTiles" onclick="RotateAShower('shower', 1)">
-
-
-            <div class="liveTile" onmouseover="nextTile(1, 0)">
-                <img src="img/LifeTileImg/6a00e54f8f86dc883401287636e5db970c-800wi.jpg">
-                <img src="img/LifeTileImg/f_303.jpg">
-                <img src="img/LifeTileImg/head.jpeg">
-            </div>
-
-        </div>
-        <div class="RotateTiles" onclick="RotateAShower('shower', 2)">
-
-
-            <div class="liveTile" onmouseover="nextTile(2, 0)">
-                <img src="img/LifeTileImg/img-dump-012513-003-595x400.jpg">
-                <img src="img/LifeTileImg/IMG_2145.jpg">
-                <img src="img/LifeTileImg/lolfacelisa.png">
-                <img src="img/LifeTileImg/random_natural_acts.jpg">
-            </div>
-
-
-
-
-        </div>
-        <div class="RotateTiles" onclick="RotateAShower('shower', 3)">
-
-
-            <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
-                <img src="img/Astroids//MainScreen.png">
-                <img src="img/Astroids/InGame.png">
-            </div>
-
-           <div class="TitleBox">
-                <h1>Astroids</h1>
-                <p>Try to survive as long as possible by using the pickups provited by the killes you make.</p>
+            
+                <div class="liveTile" onmouseover="nextTile(2, 0)">
+                    <img src="img/meanracers/meanracers.png" alt="">
+                </div>
+    
+            <div class="TitleBox">
+                <h1>Meanracers</h1>
+                <p>Be faster than your friends and get to the top first using the terain and pickups</p>
                
+               <a href="http://github.com/DavidZwit/Astroids" target="_blank">GitHub</a>
+               <a href="gamePage.html">More info</a>
            </div>
            
            <div class="ContentInfo">
+               <p>Type game: Javascript 2d</p>
+               <p>Type project: School project</p>
+               <p>Time: 4 weeks</p>
+               <p>Team: 3 devs 3 artists</p>
+               <p>Year: 2st year</p>
                
+           </div>
+
+
+        </div>
+        <div class="RotateTiles" onclick="RotateAShower('shower', 1)">
+
+                <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
+                    <img src="img/Astroids//MainScreen.png">
+                    <img src="img/Astroids/InGame.png">
+                </div>
+
+           <div class="TitleBox">
+                <h1>Astroids</h1>
+                <p>Kill the zombies and use pickups to strengthen yourself</p>
+               
+                <a href="https://github.com/DarrenVs/NodeJavascriptFramework/tree/Game" target="_blank">GitHub</a>
+                <a href="gamePage.html">More info</a>
+           </div>
+           
+           <div class="ContentInfo">
+               <p>Type game: ActionScript 2d TopDown</p>
+               <p>Type project: School project</p>
                <p>Time: 3 weeks</p>
                <p>Team: 3 devs 3 artists</p>
                <p>Year: 1st year</p>
@@ -160,113 +171,63 @@ x
 
 
         </div>
-        <div class="RotateTiles" onclick="RotateAShower('shower', 4)">
-            <div class="tileContainer">
+        <div class="RotateTiles" onclick="RotateAShower('shower', 2)">
+
 
 
                 <div class="liveTile" onmouseover="nextTile(1, 0)">
-                    <img src="img/LifeTileImg/6a00e54f8f86dc883401287636e5db970c-800wi.jpg">
-                    <img src="img/LifeTileImg/f_303.jpg ">
-                    <img src="img/LifeTileImg/head.jpeg ">
+                    <img src="img/python/ingame.jpg">
                 </div>
-            </div>
-            <h1>KAAS IS BAAS</h1>
-
-        </div>
-
-        <div class="RotateTiles" onclick="RotateAShower('shower', 5)">
-
-            <div class="liveTile" onmouseover="nextTile(2, 0)">
-                <img src="img/LifeTileImg/img-dump-012513-003-595x400.jpg">
-                <img src="img/LifeTileImg/IMG_2145.jpg ">
-                <img src="img/LifeTileImg/lolfacelisa.png">
-                <img src="img/LifeTileImg/random_natural_acts.jpg">
-            </div>
-            <h1>KAAS IS BAAS</h1>
 
 
-        </div>
 
-
-        <!-- newRotateTils
-
-             <div class="jsShower" onclick="RotateAShower('jsShower', 0)">
-
-                <div class="tileContainer">
-                    <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
-                        <img src="img/LifeTileImg/64462.jpg">
-                        <img src="img/LifeTileImg/20-01_css_snippets_random_ld_img.jpg">
-                    </div>
-                </div>                        <h1>KAAS IS BAAS</h1>
-
-
-            </div>
-
-            <div class="jsShower" onclick="RotateAShower('jsShower', 1)">
-
-                <div class="tileContainer">
-
-                    <div class="liveTile" onmouseover="nextTile(1, 0)">
-                        <img src="img/LifeTileImg/6a00e54f8f86dc883401287636e5db970c-800wi.jpg">
-                        <img src="img/LifeTileImg/f_303.jpg">
-                        <img src="img/LifeTileImg/head.jpeg">
-                    </div>
-                </div>                        <h1>KAAS IS BAAS</h1>
-
-            </div>
-            <div class="jsShower" onclick="RotateAShower('jsShower', 2)">
-
-                <div class="tileContainer">
-
-                    <div class="liveTile" onmouseover="nextTile(2, 0)">
-                        <img src="img/LifeTileImg/img-dump-012513-003-595x400.jpg">
-                        <img src="img/LifeTileImg/IMG_2145.jpg">
-                        <img src="img/LifeTileImg/lolfacelisa.png">
-                        <img src="img/LifeTileImg/random_natural_acts.jpg">
-                    </div>
-                </div>                        <h1>KAAS IS BAAS</h1>
-
-            </div>
-            <div class="jsShower" onclick="RotateAShower('jsShower', 3)">
-
-                <div class="tileContainer">
-
-                    <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
-                        <img src="img/LifeTileImg/64462.jpg ">
-                        <img src="img/LifeTileImg/20-01_css_snippets_random_ld_img.jpg">
-                    </div>
-                </div>
-                                        <h1>KAAS IS BAAS</h1>
-
-                
-            </div>
-            <div class="jsShower" onclick="RotateAShower('jsShower', 4)">
-                <div class="tileContainer">
-
-                    <div class="liveTile" onmouseover="nextTile(1, 0)">
-                        <img src="img/LifeTileImg/6a00e54f8f86dc883401287636e5db970c-800wi.jpg">
-                        <img src="img/LifeTileImg/f_303.jpg ">
-                        <img src="img/LifeTileImg/head.jpeg ">
-                    </div>
-                </div>                        <h1>KAAS IS BAAS</h1>
-
-            </div>
+            <div class="TitleBox">
+                <h1>Path finding</h1>
+                <p>Play with the little characters and see if they can find there way to their end goal</p>
                
-            <div class="jsShower" onclick="RotateAShower('jsShower', 5)">
-                <div class="tileContainer">
+                <a href="https://github.com/DarrenVs/NodeJavascriptFramework/tree/Game" target="_blank">GitHub</a>
+                <a href="gamePage.html">More info</a>
+           </div>
 
-                    <div class="liveTile" onmouseover="nextTile(2, 0)">
-                        <img src="img/LifeTileImg/img-dump-012513-003-595x400.jpg">
-                        <img src="img/LifeTileImg/IMG_2145.jpg ">
-                        <img src="img/LifeTileImg/lolfacelisa.png">
-                        <img src="img/LifeTileImg/random_natural_acts.jpg">
-                    </div>
-                </div>                        <h1>KAAS IS BAAS</h1>
+            <div class="ContentInfo">
+               <p>Type game: Python 2d</p>
+               <p>Type project: Owne time random experiment</p>
+               <p>Time: 2 weeks</p>
+               <p>Team: 1 dev</p>
+               <p>Year: 3d year</p>
+               
+           </div>
+
+        </div>
+
+        <div class="RotateTiles" onclick="RotateAShower('shower', 3)">
 
 
-            </div>
-             -->
 
+                <div class="liveTile" onmouseover="nextTile(1, 0)">
+                    <img src="img/HeroesJourney/HeroesJourney.jpg">
+                </div>
+
+
+
+            <div class="TitleBox">
+                <h1>Heroes Journey</h1>
+                <p>Follow the story and complete it your onwne way</p>
+               
+                <a href="https://github.com/DavidZwit/HeroesJourney-c-" target="_blank">GitHub</a>
+                <a href="gamePage.html">More info</a>
+           </div>
+
+            <div class="ContentInfo">
+               <p>Type game: C++ console</p>
+               <p>Type project: Small project handeled ambitiously</p>
+               <p>Time: 1 weeks</p>
+               <p>Team: 1 dev 2 story creators</p>
+               <p>Year: 2nd year</p>
+               
+           </div>
+
+        </div>
 
     </div>
 

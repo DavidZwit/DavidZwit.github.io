@@ -12,12 +12,13 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
     var self = this;
     var middleOfTile;
     var biggestWorkTileSize;
-    //fars to check current status
+    //vars to check current status
     var currRotation = 0;
-    var activeTile = 0;
+    this.activeTile = 0;
     var offsetTop = 0;
     //vars you can change
     var liveTiles = document.getElementsByClassName(_itemsID);
+    this.amoundOfTiles = liveTiles.length;
     var spaceBetweenTiles = _spaceBetweenTiles || 400;
     var aspectRatio = _aspectRatioWindows || 1.5;
     var yPos = yPos || 2;
@@ -84,14 +85,14 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
     
     var DoneRotating = function () {
         for (var i = liveTiles.length - 1; i >= 0; i--) {
-            if (i != activeTile) liveTiles[i].style.opacity = 0.08;
+            if (i != self.activeTile) liveTiles[i].style.opacity = 0.08;
         }   
     }
 
     Object.defineProperty(this, 'offsetTop', {
         set: function (_val) {
             offsetTop = _val;
-            self.RotateShowerToTile(activeTile);
+            self.RotateShowerToTile(self.activeTile);
         },
         get: function () {
             return offsetTop;
@@ -108,16 +109,16 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
             biggestWorkTileSize = workTileFunct();
         } else biggestWorkTileSize = Math.min(window.innerWidth, window.innerHeight) / 1.1;
         //rotating it to reste its value's
-        self.RotateShowerToTile(activeTile);
+        self.RotateShowerToTile(self.activeTile);
     }
 
     //rotate to middle at start
     Start["setShowerValues: " + RotateShowers] = function () {
-            self.RotateShowerToTile(3);
-        }
+        self.RotateShowerToTile(1);
+    }
         //function to call when you need to rotate the thing
     this.RotateShowerToTile = function (_tile) {
-        activeTile = _tile;
+        self.activeTile = _tile;
         scrollToPos(self, _tile * spaceBetweenTiles, 7, DoneRotating);
     }
 
@@ -125,9 +126,17 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
 
 }
 
-//this.jsShower = new RotatingShower("jsShower", 400);
-
 function RotateAShower(name, tile) {
     mainSelf[name].RotateShowerToTile(tile);
+}
+
+function RotateToNextPanel (name, next) {
+    var rotator = mainSelf[name]
+    var newTile = rotator.activeTile + next;
+
+    if (newTile >= rotator.amoundOfTiles) newTile = 0;
+    else if (newTile < 0) newTile = rotator.amoundOfTiles-1;
+
+    rotator.RotateShowerToTile(newTile);
 }
 
