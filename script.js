@@ -15,6 +15,7 @@ function exeDelegate(obj) {
     }
 }
 
+
 //----Scroll-event----\\
 function scroll() {
     exeDelegate(OnScroll);
@@ -71,6 +72,7 @@ function scrollToPos(_obj, _pos, _scrollSmoothness, _doneScrolling) {
     }
 
     if (!Update.scrollToPos) Update["scrollToPos"] = scrollObjects;
+
     
     ScrollVars.scrollingObjects[_obj.id] = {
         obj: _obj,
@@ -81,12 +83,52 @@ function scrollToPos(_obj, _pos, _scrollSmoothness, _doneScrolling) {
     }
 }
 
+
+var currentWindow = 0;
+var canScrollWindow = true;
+scrollWindow(0);
+
+var windowCount = fullScreenObjects.length-1;
 //----Scrolling-the-windows----\\
 function scrollWindow(part) {
-    scrollToPos(document.body, window.innerHeight * part, 10);
+    currentWindow = part;
+
+    //To prevent browsers from glitching when the window doesn't scroll properly'
+    if (canScrollWindow == true) {
+        setTimeout(() => canScrollWindow = true, 1400); 
+    }
+
+    canScrollWindow = false;
+    //Scroll and reset canScrollWindow when done scrolling
+    scrollToPos(document.body, window.innerHeight * part, 7, () => canScrollWindow = true );
+
+    if (part == 0) { 
+        try{ ActivateProfilePicture() }  
+        catch (err) { }
+    }
 }
 
+function nextWindow(dir) {
+    if (currentWindow + dir >= 0 && currentWindow + dir <= windowCount) {
 
+        scrollWindow(currentWindow + dir);
+    }
+}
+
+addEventListener('keydown', function (e) {
+    //window up key
+    if (e.keyCode == 38) {
+        nextWindow(-1);
+    }
+    //window down key
+    if (e.keyCode == 40) {
+        nextWindow(1);
+    }
+    //Space to scroll to start
+    if (e.keyCode == 32) {
+        scrollWindow(0);
+    }
+});
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
 
 
@@ -103,7 +145,7 @@ function scrollObjects() {
         if (distanceToTarget > 0.5 || distanceToTarget < -0.5 || scrollObj.cancleScroll) {
             if (scrollVelocity > 1 || scrollVelocity < -1)
                 scrollObj.obj.scrollTop += scrollVelocity;
-            else scrollObj.obj.scrollTop += distanceToTarget > 0 ? 1 : distanceToTarget < 0 ? -1 : 0;
+            else scrollObj.obj.scrollTop += distanceToTarget > 0 ? 1 : -1;
         } else {
 
             scrollObj.obj.scrollTop = scrollObj.targetTop;
@@ -134,5 +176,4 @@ window.addEventListener('load', function () {
     }();
     //delete Start;
 
-    console.log("loaded");
 });

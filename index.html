@@ -38,7 +38,7 @@
 
 <head>
     <title>Portofolio</title>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="img/profilePicture.jpg" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/profilePicture.jpg" /> 
 
 
     <!-- Meta tags -->
@@ -52,23 +52,26 @@
     <link rel="stylesheet" href="css/temp.css">
     <link rel="stylesheet" href="css/intro.css">
     <link rel="stylesheet" href="css/standardClasses.css">
+    <link rel="stylesheet" href="css/liveTile.css">
 </head>
 
 <body>
 
+    <img src="img/arrowKeys.png" id="buttonInfo">
+
     <div id="scrollButtons">
-        <p onclick="scrollWindow(0) ">HOME</p>
-        <p onclick="scrollWindow(1) ">ABOUT</p>
-        <p onclick="scrollWindow(2) "> WORK</p>
-        <p onclick="scrollWindow(3) ">CONTACT</p>
-        <a href="gamePage.html"> MORE GAMES INFO</a>
+        <p onclick="scrollWindow(0); ">HOME</p>
+        <p onclick="scrollWindow(1); ">ABOUT</p>
+        <p onclick="scrollWindow(2); "> WORK</p>
+        <p onclick="scrollWindow(3);" >CONTACT</p>
+        <a href="gamePage.php?page=0"> MORE GAMES INFO</a>
 
     </div>
 
 
 
     <div class="resize " id="banner">
-x
+
 
         <div class="center ">
             <div id="intro">
@@ -112,26 +115,92 @@ x
 
     </div>
 
-    <div class="resize" id="WorkSpace" style="background-color: rgb(105,145,172)  ">
+    <div class="resize" id="WorkSpace" style="background-color: rgb(30, 30, 30)  ">
 
-        <button type="button" class = "RotateLeft" onclick="RotateToNextPanel('shower', 1)"> Left </button>
-        <button type="button" class = "RotateRight" onclick="RotateToNextPanel('shower', -1)"> Right </button>
+        <button type="button" class = "RotateLeft" onclick="RotateToNextPanel('shower', 1)"> Prev. </button>
+        <button type="button" class = "RotateRight" onclick="RotateToNextPanel('shower', -1)"> Next. </button>
         
 
-    
         <div class="RotateTiles" onclick="RotateAShower('shower', 0)">
 
             
                 <div class="liveTile" onmouseover="nextTile(2, 0)">
-                    <img src="img/meanracers/meanracers.png" alt="">
+                    <img src="img/SmartKicks/1.jpg" alt="" location.href='gamePage.php'>
+                    <img src="img/SmartKicks/backgroundPicture.jpg" alt="" location.href='gamePage.php'>
+                    <img src="img/SmartKicks/screenshot1.jpg" alt="" location.href='gamePage.php'>
+                    <img src="img/SmartKicks/TheTeam.jpg" alt="" location.href='gamePage.php'>
+                    <img src="img/SmartKicks/WinnerFotos.jpg" alt="" location.href='gamePage.php'>
+                </div>
+    
+            <div class="TitleBox">
+                <h1>Smart kicks</h1>
+                <p>Align the players to pass the ball withoud hitting the obstacles</p>
+               
+               <a href="https://github.com/DavidZwit/SummerGameDev" target="_blank">GitHub</a>
+               <a href="google.com"target="_blank"> - Play - </a>
+               <a href="gamePage.php?page=1">More info</a>
+           </div>
+           
+           <div class="ContentInfo">
+               <p>Type game: Unity 3D</p>
+               <p>Type project: DGG Summer game dev (gamejam)</p>
+               <p>Time: 1 weeks</p>
+               <p>Team: 2 devs / 2 designers / 1 artist / 1 project leader</p>
+               <p>Year: 2nd - 3rd year</p>
+               
+           </div>
+
+
+        </div>
+
+        <div class="RotateTiles" onclick="RotateAShower('shower', 1)">
+
+            
+                <div class="liveTile" onmouseover="nextTile(2, 0)">
+                    <img src="img/crystales/c1.png" alt="">x
+                    <img src="img/crystales/gandalf.jpg" alt="">
+                    <img src="img/crystales/c2.png" alt="">
+                    <img src="img/crystales/c3.png" alt="">
+                    <img src="img/crystales/c4.png" alt="">
+                </div>
+    
+            <div class="TitleBox">
+                <h1>Cristales</h1>
+                <p>Aim the cristals at eachoter to create a complete network</p>
+               
+               <a href=https://github.com/Jprummel/MediaBites_2016_GameJam target="_blank">GitHub </a>
+               <a href="google.com"target="_blank"> - Play - </a>
+               <a href="gamePage.php?page=2">More info</a>
+           </div>
+           
+           <div class="ContentInfo">
+               <p>Type game: Unity 2D</p>
+               <p>Type project: Mediabites 24 hour gamejam</p>
+               <p>Time: 24 hours</p>
+               <p>Team: 4 devs 4 artists</p>
+               <p>Year: 2nd year</p>
+               
+           </div>
+
+
+        </div>
+    
+        <div class="RotateTiles" onclick="RotateAShower('shower', 2)">
+
+            
+                <div class="liveTile" onmouseover="nextTile(2, 0)">
+                    <img src="img/meanracers/inGameStart.jpg" alt="">
+                    <img src="img/meanracers/inGameMine.jpg" alt="">
+                    <img src="img/meanracers/inGameInvul.jpg" alt="">
                 </div>
     
             <div class="TitleBox">
                 <h1>Meanracers</h1>
                 <p>Be faster than your friends and get to the top first using the terain and pickups</p>
                
-               <a href="http://github.com/DavidZwit/Astroids" target="_blank">GitHub</a>
-               <a href="gamePage.html">More info</a>
+               <a href="https://github.com/DarrenVs/NodeJavascriptFramework/tree/Game" target="_blank">GitHub</a>
+               <a href="google.com"target="_blank"> - Play - </a>               
+               <a href="gamePage.php?page=3">More info</a>
            </div>
            
            <div class="ContentInfo">
@@ -139,13 +208,13 @@ x
                <p>Type project: School project</p>
                <p>Time: 4 weeks</p>
                <p>Team: 3 devs 3 artists</p>
-               <p>Year: 2st year</p>
+               <p>Year: 2nd year</p>
                
            </div>
 
 
         </div>
-        <div class="RotateTiles" onclick="RotateAShower('shower', 1)">
+        <div class="RotateTiles" onclick="RotateAShower('shower', 3)">
 
                 <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
                     <img src="img/Astroids//MainScreen.png">
@@ -156,12 +225,13 @@ x
                 <h1>Astroids</h1>
                 <p>Kill the zombies and use pickups to strengthen yourself</p>
                
-                <a href="https://github.com/DarrenVs/NodeJavascriptFramework/tree/Game" target="_blank">GitHub</a>
-                <a href="gamePage.html">More info</a>
+                <a href="https://github.com/Daniel95/WinterIsComing" target="_blank">GitHub</a>
+                <a href="google.com"target="_blank"> - Play - </a>
+                <a href="gamePage.php?page=4">More info</a>
            </div>
            
            <div class="ContentInfo">
-               <p>Type game: ActionScript 2d TopDown</p>
+               <p>Type game: ActionScript 2d Top down</p>
                <p>Type project: School project</p>
                <p>Time: 3 weeks</p>
                <p>Team: 3 devs 3 artists</p>
@@ -171,11 +241,12 @@ x
 
 
         </div>
-        <div class="RotateTiles" onclick="RotateAShower('shower', 2)">
+        <div class="RotateTiles" onclick="RotateAShower('shower', 4)">
 
 
 
                 <div class="liveTile" onmouseover="nextTile(1, 0)">
+                    <img src="img/python/pythonObstacles.jpg" alt="">
                     <img src="img/python/ingame.jpg">
                 </div>
 
@@ -185,8 +256,9 @@ x
                 <h1>Path finding</h1>
                 <p>Play with the little characters and see if they can find there way to their end goal</p>
                
-                <a href="https://github.com/DarrenVs/NodeJavascriptFramework/tree/Game" target="_blank">GitHub</a>
-                <a href="gamePage.html">More info</a>
+                <a href="https://github.com/DavidZwit/Python-pathfinding" target="_blank">GitHub</a>
+                <a href="google.com"target="_blank"> - Play - </a>
+                <a href="gamePage.php?page=5">More info</a>
            </div>
 
             <div class="ContentInfo">
@@ -194,35 +266,71 @@ x
                <p>Type project: Owne time random experiment</p>
                <p>Time: 2 weeks</p>
                <p>Team: 1 dev</p>
-               <p>Year: 3d year</p>
+               <p>Year: 3rd year</p>
                
            </div>
 
         </div>
 
-        <div class="RotateTiles" onclick="RotateAShower('shower', 3)">
+        <div class="RotateTiles" onclick="RotateAShower('shower', 5)">
 
 
 
-                <div class="liveTile" onmouseover="nextTile(1, 0)">
-                    <img src="img/HeroesJourney/HeroesJourney.jpg">
-                </div>
+            <div class="liveTile" onmouseover="nextTile(1, 0)">
+                <img src="img/HeroesJourney/HeroesJourney.jpg">
+            </div>
 
 
 
             <div class="TitleBox">
                 <h1>Heroes Journey</h1>
-                <p>Follow the story and complete it your onwne way</p>
+                <p>Follow the story and complete it your owne way</p>
                
                 <a href="https://github.com/DavidZwit/HeroesJourney-c-" target="_blank">GitHub</a>
-                <a href="gamePage.html">More info</a>
+                <a href="google.com"target="_blank"> - Play - </a>
+                <a href="gamePage.php?page= 6">More info</a>
            </div>
 
             <div class="ContentInfo">
                <p>Type game: C++ console</p>
                <p>Type project: Small project handeled ambitiously</p>
-               <p>Time: 1 weeks</p>
+               <p>Time: 1 week</p>
                <p>Team: 1 dev 2 story creators</p>
+               <p>Year: 2nd year</p>
+               
+           </div>
+
+        </div>
+
+         <div class="RotateTiles" onclick="RotateAShower('shower', 6)">
+
+
+
+                <div class="liveTile" onmouseover="nextTile(1, 0)">
+                    <img src="img/pinball/levelSelect.jpg">
+                    <img src="img/pinball/levelPrevieuw.jpg">
+                    <img src="img/pinball/inGame.jpg">
+                    <img src="img/pinball/ingameRamp.jpg">
+                    <img src="img/pinball/loginScreen.jpg">
+                    <img src="img/pinball/startScreen.jpg">
+                </div>
+
+
+
+            <div class="TitleBox">
+                <h1>Pinball game</h1>
+                <p>Move the map and try to get the ball to the end</p>
+               
+                <a href="https://github.com/Daniel95/Labyrinth" target="_blank">GitHub</a>
+                <a href="http://14411.hosts.ma-cloud.nl/labyrinth/"target="_blank"> - Play - </a>
+                <a href="gamePage.php?page=7">More info</a>
+           </div>
+
+            <div class="ContentInfo">
+               <p>Type game: Unity 3D  3rd person</p>
+               <p>Type project: School project</p>
+               <p>Time: 4 weeks</p>
+               <p>Team: 3 devs</p>
                <p>Year: 2nd year</p>
                
            </div>
@@ -236,6 +344,13 @@ x
             <div class="title ">
                 CONTACT
             </div>
+            <div class="contact">  
+                    
+                <h2>Email: </h2> <p>&#100;&#097;&#118;&#105;&#100;&#122;&#119;&#105;&#116;&#115;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</p>
+                <h2>LinkedIn</h2> <p>linkedin link</p>
+                <h2>GitHub</h2> <p>gihublink</p>
+                <h2>CV</h2> <a href="https://drive.google.com/file/d/0BzDFFP0oYO52RV8yN1QwNXhwbVE/view?usp=sharing">Link</a>
+            </div>
         </div>
     </div>
 
@@ -246,6 +361,7 @@ x
     <script src="js/rotatingShower.js"></script>
     <script src="js/responsiveProfilePicture.js"></script>
     <script src="js/responsiveNavBar.js"></script>
+    <script src="js/snapScroll.js"></script>
     <script src="mainPage.js"></script>
 </body>
 

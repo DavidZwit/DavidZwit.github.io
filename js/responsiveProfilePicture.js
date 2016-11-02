@@ -15,7 +15,7 @@
 
     function ActivateProfilePicture () {
         profilePicture.src = 'img/profileGif.gif';
-        setTimeout( resetProfilePicture, 3000 );
+        setTimeout( resetProfilePicture, 1300 );
     }
 
     Start["profilePictureStart"] = function () {

@@ -1,4 +1,15 @@
 
     
-    this.shower = new RotatingShower("RotateTiles", 600);
+    this.shower = new RotatingShower("RotateTiles", 500);
     AddRotator(this.shower);
+    addEventListener('keydown', function (e) {
+
+        if (e.keyCode == 39) {
+            scrollWindow(2);
+            RotateToNextPanel('shower', -1);
+        } 
+        if (e.keyCode == 37) {
+            scrollWindow(2);
+            RotateToNextPanel('shower', 1);
+        }
+    });

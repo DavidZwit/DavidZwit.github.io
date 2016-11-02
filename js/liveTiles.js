@@ -4,25 +4,31 @@
 
 var tiles = addObjectsToDict("liveTile");
 var tileAsElement = document.getElementsByClassName("liveTile");
-var sizeRatio = 1.7;
+var sizeRatio = 1.6;
 
-function AddRotator(it) {
+var tilesSize = 3;
 
-    it.rotated["liveTiles"] = function () {
-        var newHeight = function (tile) {
+function rescaleLiveTiles () {
+    var newHeight = function (tile) {
             //Still need to find a way to calculate good sizes      
-            return window.innerHeight / 3;
-        }
+        return window.innerHeight / tilesSize;
+    }
 
-        for (var t in tiles) tiles[t].height = newHeight();
+    for (var t in tiles) tiles[t].height = newHeight();
 
-        for (var i = 0; i < tileAsElement.length; i++) {
-            tileAsElement[i].style.height = newHeight() + "px";
-            tileAsElement[i].style.width = newHeight() * sizeRatio + "px";
-        }
+    for (var i = 0; i < tileAsElement.length; i++) {
+        tileAsElement[i].style.height = newHeight() + "px";
+        tileAsElement[i].style.width = newHeight() * sizeRatio + "px";
     }
 }
 
+
+function AddRotator(it) {
+
+    it.rotated["liveTiles"] = rescaleLiveTiles;
+}
+
+OnResize['resizeLiveTiles'] = rescaleLiveTiles;
 
 var c = -1;
 Update["moveTiles"] = function () {
@@ -42,7 +48,7 @@ function addObjectsToDict(tileName) {
     //Creating the tile objects!!\\
     for (var i = 0; i < tileAsElement.length; i++) {
         var currTile = tileAsElement[i];
-        currTile.id = !currTile.id ? "tile:" + i : currTile.id;
+        currTile.id = "tile:" + i;
 
         //Tile values
         tiles[currTile.id] = {

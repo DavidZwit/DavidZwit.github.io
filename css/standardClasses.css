@@ -6,7 +6,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .center {
@@ -21,6 +21,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
     color: #e67e22;
     font-family: "Times New Roman", Georgia, Serif;
     font-size: 5vw;
+    margin-top: 5%;
 }
 
 .lowerZIndex {
@@ -40,6 +41,3 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
     overflow: hidden;
 }
 
-body {
-    z-index: -50;
-}
