@@ -1,34 +1,4 @@
 
-.side {
-    -webkit-transition: border-radius .5s ease-in, width .2s ease-out, background-color .2s linear, padding .3s ease margin .4s ease;
-    transition: border-radius .5s ease-in, width .2s ease-out, background-color .2s linear, margin .4s ease, padding .3s ease;
-    -moz-transition: border-radius .5s ease-in, width .2s ease-out, background-color .2s linear, margin .4s ease, padding .3s ease;
-    -o-transition: border-radius .5s ease-in, width .2s ease-out, background-color .2s linear, margin .4s ease, padding .3s ease;
- 
-    width: 75%;
-    height: 50%;
-    
-    border-radius: 10px;
-
-    margin: 10% 10%;
-
-    background-color: rgb(215,92,55);
-    overflow: hidden;
-}
-
-.side p, .side a {
-    transition: margin .3s ease-in-out;
-    float: left;
-    margin: 2%;
-    text-align: center;
-
-    color : grey;
-    
-    text-decoration: none;
-    font-size: 150%;
-}
-
-
 
 .TITLE {
     font-size: 300%;
@@ -46,21 +16,54 @@
 }
 
 .gameInfo {
-    margin: 5%;
-    font-size: 1.3pc;    
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    text-align: left;
-
-    border-width: 5px;
-}
-
-.gameInfoBlack {
-        margin: 5%;
+    margin: 2.5%;
     font-size: 1.3pc;    
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     text-align: left;
 
-    border-width: 5px;
+    border: 2px solid black;
+    border-radius: 15px;
+
+    padding: 1%;
+
+    min-width: 25%;
+    max-width: 30%;
+}
+
+.gameInfoBlack {
+    margin: 2.5%;
+    font-size: 1.3pc;    
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-align: left;
+
+    border: 2px solid black;
+    border-radius: 15px;
+
+    padding: 1%;
+
+    min-width: 25%;
+    max-width: 30%;
+}
+
+.gameInfoBlack a {
+    text-decoration: none;
+    color: rgb(20, 20, 20);
+}
+
+.gameInfo a {
+    text-decoration: none;
+    color: rgb(20, 20, 20);
+}
+
+
+.gameInfoBlack a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.gameInfo a:hover {
+    text-decoration: underline;
+    color: white;
 }

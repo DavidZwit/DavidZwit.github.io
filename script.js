@@ -40,7 +40,11 @@ function resize(forcedResize) {
 };
 document.body.onresize = resize;
 
-
+var infoPageDiv = document.getElementById("moreInfoPage");
+function infoPage(page) {
+    infoPageDiv.innerHTML = page;
+    scrollWindow(4);
+}
 
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
 
@@ -88,7 +92,7 @@ var currentWindow = 0;
 var canScrollWindow = true;
 scrollWindow(0);
 
-var windowCount = fullScreenObjects.length-1;
+var windowCount = fullScreenObjects.length;
 //----Scrolling-the-windows----\\
 function scrollWindow(part) {
     currentWindow = part;

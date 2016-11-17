@@ -10,15 +10,16 @@ var tilesSize = 3;
 
 function rescaleLiveTiles () {
     var newHeight = function (tile) {
-            //Still need to find a way to calculate good sizes      
+            //Still need to find a way to calculate good sizes
+        if (tile.id == "infoTile") return window.innerHeight / 1.8; 
         return window.innerHeight / tilesSize;
     }
 
-    for (var t in tiles) tiles[t].height = newHeight();
+    //for (var t in tiles) tiles[t].height = newHeight();
 
     for (var i = 0; i < tileAsElement.length; i++) {
-        tileAsElement[i].style.height = newHeight() + "px";
-        tileAsElement[i].style.width = newHeight() * sizeRatio + "px";
+        tileAsElement[i].style.height = newHeight(tileAsElement[i]) + "px";
+        tileAsElement[i].style.width = newHeight(tileAsElement[i]) * sizeRatio + "px";
     }
 }
 
@@ -66,14 +67,16 @@ function addObjectsToDict(tileName) {
 function nextTile(id, tileNumb) {
     var editTile = tiles["tile:" + id];
 
-    if (tileNumb && typeof tileNumb == 'number') {
-        editTile.currTile = tileNumb;
-        scrollToPos(editTile.tile, editTile.height * tileNumb, 50);
-    } else {
+    try {
+        if (tileNumb && typeof tileNumb == 'number') {
+            editTile.currTile = tileNumb;
+            scrollToPos(editTile.tile, editTile.height * tileNumb, 50);
+        } else {
 
-        editTile.currTile = (editTile.currTile < editTile.length - 1 ? editTile.currTile + 1 : 0);
+            editTile.currTile = (editTile.currTile < editTile.length - 1 ? editTile.currTile + 1 : 0);
 
-        scrollToPos(editTile.tile, editTile.height * editTile.currTile, 10);
-    }
+            scrollToPos(editTile.tile, editTile.height * editTile.currTile, 10);
+        }
+    } catch (err) {}
 
 }

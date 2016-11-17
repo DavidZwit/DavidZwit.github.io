@@ -21,3 +21,7 @@
     height: 100%;
 
 }
+
+.liveTile img:hover {
+    cursor: pointer;
+}

@@ -4,7 +4,7 @@
 
 
     function repositionProfilePicture () {
-        intro.style.top = ((window.innerHeight / 4 + document.body.scrollTop) / 2) + "px";
+        intro.style.top = ((window.innerHeight / 4 + document.body.scrollTop) / 6) + "px";
     }
     OnScroll["ProfilePicture"] = repositionProfilePicture;
 
@@ -15,7 +15,7 @@
 
     function ActivateProfilePicture () {
         profilePicture.src = 'img/profileGif.gif';
-        setTimeout( resetProfilePicture, 1300 );
+        setTimeout( resetProfilePicture, 2700 );
     }
 
     Start["profilePictureStart"] = function () {

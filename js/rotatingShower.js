@@ -21,7 +21,7 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
     this.amoundOfTiles = liveTiles.length;
     var spaceBetweenTiles = _spaceBetweenTiles || 400;
     var aspectRatio = _aspectRatioWindows || 1.5;
-    var yPos = yPos || 2;
+    var yPos = yPos || 3;
     var workTileFunct = _biggestWorkTileFunct || false;
     var backgroundTileSize = _backgroundTileSize || 100;
 
@@ -57,12 +57,12 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
                     //opacity
                     currTile.style.opacity = Math.abs(newSize) / biggestWorkTileSize;
                     //zIndex
-                    currTile.style.zIndex = Math.abs(newSize);
+                    //currTile.style.zIndex = Math.abs(newSize)/400;
 
                     //If it's still in the window change it's position else hide it
                     if (thisLeft < window.innerWidth - window.innerWidth / 8) {
 
-                        currTile.style.left = thisLeft + "px";
+                        currTile.style.left = thisLeft + window.innerWidth/5 + "px";
                         currTile.style.visibility = "visible";
 
                     } else currTile.style.visibility = "hidden";
@@ -114,7 +114,7 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
 
     //rotate to middle at start
     Start["setShowerValues: " + RotateShowers] = function () {
-        self.RotateShowerToTile(1);
+        self.RotateShowerToTile(3);
     }
         //function to call when you need to rotate the thing
     this.RotateShowerToTile = function (_tile) {

@@ -5,11 +5,11 @@
     addEventListener('keydown', function (e) {
 
         if (e.keyCode == 39) {
-            scrollWindow(2);
+            scrollWindow(3);
             RotateToNextPanel('shower', -1);
         } 
         if (e.keyCode == 37) {
-            scrollWindow(2);
+            scrollWindow(3);
             RotateToNextPanel('shower', 1);
         }
     });
