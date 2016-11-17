@@ -41,9 +41,10 @@ function resize(forcedResize) {
 document.body.onresize = resize;
 
 var infoPageDiv = document.getElementById("moreInfoPage");
-function infoPage(page) {
+function infoPage(page, dontScroll) {
     infoPageDiv.innerHTML = page;
-    scrollWindow(4);
+    if (!dontScroll == true)
+        scrollWindow(4);
 }
 
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
