@@ -113,22 +113,6 @@ function nextWindow(dir) {
     }
 }
 
-addEventListener('keydown', function (e) {
-    //window up key
-    if (e.keyCode == 38) {
-        nextWindow(-1);
-    }
-    //window down key
-    if (e.keyCode == 40) {
-        nextWindow(1);
-    }
-    //Space to scroll to start
-    if (e.keyCode == 32) {
-        scrollWindow(0);
-    }
-});
-//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
-
 
 //----The-scroll-loop-that-gets-activated-when-needed----\\
 function scrollObjects() {
