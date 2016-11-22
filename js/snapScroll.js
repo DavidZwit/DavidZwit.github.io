@@ -10,11 +10,10 @@ document.addEventListener('touchstart', function (e) {
     startTouchScroll = e.changedTouches[0].clientY;
 });
 
-document.addEventListener('touchend', (e) => {
+document.addEventListener('touchend', function (e) {
     endTouchScroll = e.changedTouches[0].clientY;    
 
     let scroll = startTouchScroll - endTouchScroll;
-    console.log(scroll);
     if (canScrollWindow == true) 
         nextWindow(scroll > 50 ? 1 : scroll < -50 ? -1 : 0);
 });

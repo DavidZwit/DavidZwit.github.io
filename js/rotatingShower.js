@@ -42,7 +42,7 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
                 for (var i = liveTiles.length - 1; i >= 0; i--) {
                     //calculating the input
                   
-                    var thisLeft = tileLeft - (i * spaceBetweenTiles);
+                    var thisLeft = tileLeft - (i * spaceBetweenTiles);  
                     var distanceFromCenter = Math.abs(thisLeft - middleOfTile);
                     var newSize = biggestWorkTileSize - distanceFromCenter;
                     //recalculating thisLeft for the tiles
@@ -60,9 +60,9 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
                     //currTile.style.zIndex = Math.abs(newSize)/400;
 
                     //If it's still in the window change it's position else hide it
-                    if (thisLeft < window.innerWidth - window.innerWidth / 8) {
+                    if (thisLeft < window.innerWidth - window.innerWidth / 6) {
 
-                        currTile.style.left = thisLeft + window.innerWidth/5 + "px";
+                        currTile.style.left = thisLeft + window.innerWidth/6 + "px";
                         currTile.style.visibility = "visible";
 
                     } else currTile.style.visibility = "hidden";
