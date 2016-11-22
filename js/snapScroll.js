@@ -5,22 +5,22 @@ document.addEventListener('wheel', function (e) {
 
 var touchScrollOffsetY = 0;
 var oldTouchScrollOffset = 0;
+var freshScroll = true;
 document.addEventListener('touchmove', function (e) {
     touchScrollOffsetY = e.changedTouches[0].clientY;
 
     let scroll = touchScrollOffsetY - oldTouchScrollOffset;
-    if (canScrollWindow == true) nextWindow(scroll > 50 ? 1 : scroll < -50 ? -1 : 0);
+    if (canScrollWindow == true && freshScroll == false) 
+        nextWindow(scroll > 50 ? -1 : scroll < -50 ? 1 : 0);
     
+    freshScroll = false;
     oldTouchScrollOffset = touchScrollOffsetY;
 });
 
 document.addEventListener('touchend', () => {
-    oldTouchScrollOffset = touchScrollOffsetY;
+    freshScroll = true;
 });
 
-setInterval( () => {
-
-})
 
 addEventListener('keydown', function (e) {
     //window up key

@@ -88,7 +88,7 @@
 #navInfo {
     position: fixed; 
     padding-left: 80%;
-    padding-top: 2.5%;
+    padding-top: 3.5%;
     width: 20%;
 }
 
@@ -110,7 +110,7 @@
 }
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 1000px) {
     #navInfo {
         visibility: hidden;
         width: 0px;
