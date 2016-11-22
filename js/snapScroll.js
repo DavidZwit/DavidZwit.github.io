@@ -3,22 +3,20 @@ document.addEventListener('wheel', function (e) {
     if (canScrollWindow == true) nextWindow(scroll);
 });
 
-var touchScrollOffsetY = 0;
-var oldTouchScrollOffset = 0;
-var freshScroll = true;
-document.addEventListener('touchmove', function (e) {
-    touchScrollOffsetY = e.changedTouches[0].clientY;
+var endTouchScroll = 0;
+var startTouchScroll = 0;
 
-    let scroll = touchScrollOffsetY - oldTouchScrollOffset;
-    if (canScrollWindow == true && freshScroll == false) 
-        nextWindow(scroll > 50 ? -1 : scroll < -50 ? 1 : 0);
-    
-    freshScroll = false;
-    oldTouchScrollOffset = touchScrollOffsetY;
+document.addEventListener('touchstart', function (e) {
+    startTouchScroll = e.changedTouches[0].clientY;
 });
 
-document.addEventListener('touchend', () => {
-    freshScroll = true;
+document.addEventListener('touchend', (e) => {
+    endTouchScroll = e.changedTouches[0].clientY;    
+
+    let scroll = startTouchScroll - endTouchScroll;
+    console.log(scroll);
+    if (canScrollWindow == true) 
+        nextWindow(scroll > 50 ? 1 : scroll < -50 ? -1 : 0);
 });
 
 
