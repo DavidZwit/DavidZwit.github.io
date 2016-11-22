@@ -57,20 +57,36 @@
 </head>
 
 <body>
+
+    <!-- ///////////////// navigation UI \\\\\\\\\\\\\\\\\ -->
     
-    <img src="img/arrowKeys.png" id="buttonInfo">
+    <div id="navInfo">
+        <img src="img/arrowKeyUp.png" id="upInfoButotn" onclick="nextWindow(-1);" style="margin-left: 5.5pc;">
+        </img>
+        <br>
+        <img src="img/arrowKeyLeft.png" id="leftInfoButotn" onclick="rotateShower(1);">
+        </img>
+        <img src="img/arrowKeyDown.png" id="downInfoButotn" onclick="nextWindow(1);">
+        </img>
+        <img src="img/arrowKeyRight.png" id="rightInfoButotn" onclick="rotateShower(-1);">
+        </img>
+    </div>
+
+
+    <!-- ///////////////// navigation buttons \\\\\\\\\\\\\\\\\ -->    
 
     <div id="scrollButtons">
         <p onclick="scrollWindow(0); ">HOME</p>
         <p onclick="scrollWindow(1); ">ABOUT</p>
         <p onclick="scrollWindow(2);" >CONTACT</p>
-
         <p onclick="scrollWindow(3); "> WORK</p>
 
     </div>
 
 
-
+    <!-- _______________________________________________________ -->
+    <!-- ///////////////// INTRO PAGE \\\\\\\\\\\\\\\\\ -->
+    <!-- _______________________________________________________ -->
     <div class="resize " id="banner">
 
         <div class="center ">
@@ -88,13 +104,15 @@
         </div>
     </div>
 
-
+        <!-- _______________________________________________________ -->
+    <!-- ///////////////// ABOUT PAGE \\\\\\\\\\\\\\\\\ -->
+        <!-- _______________________________________________________ -->
 
     <div class="resize " style="background-color: rgb(103,114,122); ">
         <div class="center">
             <div class="title ">ABOUT</div>
         </div>
-            <div class="AboutText" >
+        <div class="AboutText" >
 
             <h1>About:</h1>
             <p>Hey, I am David Zwitser. A junior Game Developer studying at Mediacollege Amsterdam.</p>
@@ -105,9 +123,13 @@
             <p>You can look around in my portfolio and maybe even take a look at the code powering the website (which I made without any plugins. </p>
 
             <a href="https://drive.google.com/file/d/0BzDFFP0oYO52RV8yN1QwNXhwbVE/view?usp=sharing" style=" font-size: 180%;">Link to CV</a>
-            </div> 
+        </div> 
 
-        </div>
+    </div>
+
+        <!-- _______________________________________________________ -->
+    <!-- ///////////////// CONTACT PAGE \\\\\\\\\\\\\\\\\ -->    
+        <!-- _______________________________________________________ -->
 
     <div class="resize " style="background-color: rgb(195,215,223) ">
         <div class="center ">
@@ -125,18 +147,31 @@
             
     </div>
 
-    <div class="resize" id="WorkSpace" style="background-color: rgb(30, 30, 30)  ">
-
+    <!-- _______________________________________________________ -->
+    <!-- ///////////////// WORK SHOWER PAGE \\\\\\\\\\\\\\\\\ -->
+    <!-- _______________________________________________________ -->
+    
         
+
+    <div class="resize" id="WorkSpace" style="background-color: rgb(30, 30, 30)">
+        
+        <!-- shower scroll buttons -->
+        <img  src="img/arrowLeft.png" class = "RotateLeft" onclick="RotateToNextPanel('shower', 1)"> </igm>
+        <img src="img/arrowRight.png" class = "RotateRight" onclick="RotateToNextPanel('shower', -1)"> </img>
+
+        <!-- _______________________________________________________ -->
+        <!-- ///////////////// SMART KICKS SHOWER TILE \\\\\\\\\\\\\\\\\ -->
+        <!-- _______________________________________________________ -->
+
         <div class="RotateTiles" onclick="RotateAShower('shower', 0)">
 
             
                 <div class="liveTile" onmouseover="nextTile(2, 0)">
-                    <img onclick="infoPage(gamePages.smartKicks)" src="img/SmartKicks/1.jpg" >
-                    <img onclick="infoPage(gamePages.smartKicks)" src="img/SmartKicks/backgroundPicture.jpg">
-                    <img onclick="infoPage(gamePages.smartKicks)" src="img/SmartKicks/screenshot1.jpg" >
-                    <img onclick="infoPage(gamePages.smartKicks)" src="img/SmartKicks/TheTeam.jpg" >
-                    <img onclick="infoPage(gamePages.smartKicks)" src="img/SmartKicks/WinnerFotos.jpg">
+                    <img onclick="infoPage(gamePages[1])" src="img/SmartKicks/1.jpg" >
+                    <img onclick="infoPage(gamePages[1])" src="img/SmartKicks/backgroundPicture.jpg">
+                    <img onclick="infoPage(gamePages[1])" src="img/SmartKicks/screenshot1.jpg" >
+                    <img onclick="infoPage(gamePages[1])" src="img/SmartKicks/TheTeam.jpg" >
+                    <img onclick="infoPage(gamePages[1])" src="img/SmartKicks/WinnerFotos.jpg">
                 </div>
     
             <div class="TitleBox">
@@ -146,7 +181,7 @@
                <a href="https://github.com/DavidZwit/SummerGameDev" target="_blank">GitHub</a>
                <a href="https://www.dropbox.com/s/j0fye5te0q13bl7/phone.apk?dl=0" target="_blank"> - Play - </a>
                 <br>    
-                <a onclick="infoPage(gamePages.smartKicks)">More info</a>
+                <a onclick="infoPage(gamePages[1])">More info</a>
            </div>
            
            <div class="ContentInfo">
@@ -161,238 +196,10 @@
 
         </div>
 
-        <div class="RotateTiles" onclick="RotateAShower('shower', 1)">
+        <!-- ///////////////// SMART KICKS MORE INFO PAGE \\\\\\\\\\\\\\\\\ -->
+        
 
-            
-                <div class="liveTile" onmouseover="nextTile(2, 0)">
-                    <img onclick="infoPage(gamePages.crystales)" src="img/crystales/c1.png" alt="">x
-                    <img onclick="infoPage(gamePages.crystales)" src="img/crystales/gandalf.jpg" alt="">
-                    <img onclick="infoPage(gamePages.crystales)" src="img/crystales/c2.png" alt="">
-                    <img onclick="infoPage(gamePages.crystales)" src="img/crystales/c3.png" alt="">
-                    <img onclick="infoPage(gamePages.crystales)" src="img/crystales/c4.png" alt="">
-                </div>
-    
-            <div class="TitleBox">
-                <h1>Crystales</h1>
-                <p>Aim the crystals at eachoter to create a complete network</p>
-               
-               <a href=https://github.com/Jprummel/MediaBites_2016_GameJam target="_blank">GitHub </a>
-               <a href="http://pakhuis.hosts.ma-cloud.nl/gamejam/" target="_blank"> - Play - </a>
-                <br>    
-               <a onclick="infoPage(gamePages.crystales)" >More info</a>
-           </div>
-           
-           <div class="ContentInfo">
-               <p>Type game: Unity 2D</p>
-               <p>Type project: Mediabites 24 hour gamejam</p>
-               <p>Time: 24 hours</p>
-               <p>Team: 4 devs 4 artists</p>
-               <p>Year: 2nd year</p>
-               
-           </div>
-
-
-        </div>
-    
-        <div class="RotateTiles" onclick="RotateAShower('shower', 2)">
-
-            
-                <div class="liveTile" onmouseover="nextTile(2, 0)">
-                    <img onclick="infoPage(gamePages.meanracers)" src="img/meanracers/inGameStart.jpg" alt="">
-                    <img onclick="infoPage(gamePages.meanracers)" src="img/meanracers/inGameMine.jpg" alt="">
-                    <img onclick="infoPage(gamePages.meanracers)" src="img/meanracers/inGameInvul.jpg" alt="">
-                </div>
-    
-            <div class="TitleBox">
-                <h1>Meanracers</h1>
-                <p>Be faster than your friends and get to the top first using the terain and pickups</p>
-               
-               <a href="https://github.com/DarrenVs/NodeJavascriptFramework/tree/Game" target="_blank">GitHub</a>
-               <a href="https://www.youtube.com/watch?v=rPYeQvdNQHE"target="_blank"> - Play - </a>   
-                <br>                
-               <a onclick="infoPage(gamePages.meanracers)">More info</a>
-           </div>
-           
-           <div class="ContentInfo">
-               <p>Type game: Javascript 2d</p>
-               <p>Type project: School project</p>
-               <p>Time: 4 weeks</p>
-               <p>Team: 3 devs 3 artists</p>
-               <p>Year: 2nd year</p>
-               
-           </div>
-
-
-        </div>
-
-
-        <div class="RotateTiles" onclick="RotateAShower('shower', 3)">
-
-            <div class="liveTile" onmouseover="nextTile(0, 0)">
-                <img onclick="infoPage(gamePages.framework)" src="img/Typescript_framework/codeShot.jpg">
-            </div>
-
-            <div class="TitleBox">
-                <h1>Typescript framework</h1>
-                <p>A framework in typescript to easely create games</p>
-
-                <a href="https://github.com/DavidZwit/TypeScript_framework" target="blank">Gidhub</a>
-                <a href="" target="blank"> - Play - </a>
-                <br>
-                <a onclick="infoPage(gamePages.framework)">More info</a>
-            </div>
-
-            <div class="ContentInfo">
-                <p>Type game: Typescript framework</p>
-                <p>Type project: Free time / school project</p>
-                <p>Time: W.I.P</p>
-                <p>Team: 1 dev</p>
-                <p>Year: 3rd year</p>
-
-            </div>
-
-        </div>
-
-        <div class="RotateTiles" onclick="RotateAShower('shower', 4)">
-
-                <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
-                    <img onclick="infoPage(gamePages.astroids)" src="img/Astroids//MainScreen.png">
-                    <img onclick="infoPage(gamePages.astroids)" src="img/Astroids/InGame.png">
-                </div>
-
-           <div class="TitleBox">
-                <h1>Astroids</h1>
-                <p>Kill the zombies and use pickups to strengthen yourself</p>
-               
-                <a href="https://github.com/Daniel95/WinterIsComing" target="_blank">GitHub</a>
-                <a href="http://davidzwitser.com/games/astriods/index.html"target="_blank"> - Play - </a>
-                <br>    
-                <a onclick="infoPage(gamePages.astroids)">More info</a>
-           </div>
-           
-           <div class="ContentInfo">
-               <p>Type game: ActionScript 2d Top down</p>
-               <p>Type project: School project</p>
-               <p>Time: 3 weeks</p>
-               <p>Team: 3 devs 3 artists</p>
-               <p>Year: 1st year</p>
-               
-           </div>
-
-
-        </div>
-        <div class="RotateTiles" onclick="RotateAShower('shower', 5)">
-
-
-
-                <div class="liveTile" onmouseover="nextTile(1, 0)">
-                    <img onclick="infoPage(gamePages.pathfinding)" src="img/python/pythonObstacles.jpg" alt="">
-                    <img onclick="infoPage(gamePages.pathfinding)" src="img/python/ingame.jpg">
-                </div>
-
-
-
-            <div class="TitleBox">
-                <h1>Path finding</h1>
-                <p>Play with the little characters and see if they can find there way to their end goal</p>
-               
-                <a href="https://github.com/DavidZwit/Python-pathfinding" target="_blank">GitHub</a>
-                <a href="https://github.com/DavidZwit/Python-pathfinding/archive/master.zip"target="_blank"> - Play - </a>
-                <br>    
-                <a onclick="infoPage(gamePages.pathfinding)">More info</a>
-           </div>
-
-            <div class="ContentInfo">
-               <p>Type game: Python 2d</p>
-               <p>Type project: Owne time random experiment</p>
-               <p>Time: 2 weeks</p>
-               <p>Team: 1 dev</p>
-               <p>Year: 3rd year</p>
-               
-           </div>
-
-        </div>
-
-        <div class="RotateTiles" onclick="RotateAShower('shower', 6)">
-
-
-
-            <div class="liveTile" onmouseover="nextTile(1, 0)">
-                <img onclick="infoPage(gamePages.heroesjourney)" src="img/HeroesJourney/HeroesJourney.jpg">
-            </div>
-
-
-
-            <div class="TitleBox">
-                <h1>Heroes Journey</h1>
-                <p>Follow the story and complete it your owne way</p>
-               
-                <a href="https://github.com/DavidZwit/HeroesJourney-c-" target="_blank">GitHub</a>
-                <a href="https://github.com/DavidZwit/HeroesJourney-c-/archive/master.zip"target="_blank"> - Play - </a>
-                <br>    
-                <a onclick="infoPage(gamePages.heroesjourney)">More info</a>
-           </div>
-
-            <div class="ContentInfo">
-               <p>Type game: C++ console</p>
-               <p>Type project: Small project handeled ambitiously</p>
-               <p>Time: 1 week</p>
-               <p>Team: 1 dev 2 story creators</p>
-               <p>Year: 2nd year</p>
-               
-           </div>
-
-        </div>
-
-         <div class="RotateTiles" onclick="RotateAShower('shower', 7)">
-
-
-
-                <div class="liveTile" onmouseover="nextTile(1, 0)">
-                    <img onclick="infoPage(gamePages.pinball)" src="img/pinball/levelSelect.jpg">
-                    <img onclick="infoPage(gamePages.pinball)" src="img/pinball/levelPrevieuw.jpg">
-                    <img onclick="infoPage(gamePages.pinball)" src="img/pinball/inGame.jpg">
-                    <img onclick="infoPage(gamePages.pinball)" src="img/pinball/ingameRamp.jpg">
-                    <img onclick="infoPage(gamePages.pinball)" src="img/pinball/loginScreen.jpg">
-                    <img onclick="infoPage(gamePages.pinball)" src="img/pinball/startScreen.jpg">
-                </div>
-
-
-
-            <div class="TitleBox">
-                <h1>Pinball game</h1>
-                <p>Move the map and try to get the ball to the end</p>
-               
-                <a href="https://github.com/Daniel95/Labyrinth" target="_blank">GitHub</a>
-                <a href="http://14411.hosts.ma-cloud.nl/labyrinth/"target="_blank"> - Play - </a>
-                <br>    
-                <a  onclick="infoPage(gamePages.pinball)">More info</a>
-           </div>
-
-            <div class="ContentInfo">
-               <p>Type game: Unity 3D  3rd person</p>
-               <p>Type project: School project</p>
-               <p>Time: 4 weeks</p>
-               <p>Team: 3 devs</p>
-               <p>Year: 2nd year</p>
-               
-           </div>
-
-        </div>
-
-        <img  src="img/arrowLeft.png" class = "RotateLeft" onclick="RotateToNextPanel('shower', 1)"> </igm>
-        <img src="img/arrowRight.png" class = "RotateRight" onclick="RotateToNextPanel('shower', -1)"> </img>
-
-    </div>
-
-    <div id="moreInfoPage">
-
-    </div>
-
-    <div id="infoPages" style="visibility: hidden">
-
-
-        <div id="smartKicks" style="background-color: rgb(63, 112, 59); ">
+        <div id="smartKicks" class="resize" style="visibility : hidden; ">
             
             <div class="TITLE">
                 Smart kicks
@@ -435,7 +242,46 @@
 
         </div>
 
-        <div id="cristales" style="background-color: rgb(25, 157, 183); ">
+        <!-- _______________________________________________________ -->
+        <!-- ///////////////// CRYSTALES SHOWER TILE \\\\\\\\\\\\\\\\\ -->        
+        <!-- _______________________________________________________ -->
+
+        <div class="RotateTiles" onclick="RotateAShower('shower', 1)">
+
+            
+                <div class="liveTile" onmouseover="nextTile(2, 0)">
+                    <img onclick="infoPage(gamePages[2])" src="img/crystales/c1.png" alt="">x
+                    <img onclick="infoPage(gamePages[2])" src="img/crystales/gandalf.jpg" alt="">
+                    <img onclick="infoPage(gamePages[2])" src="img/crystales/c2.png" alt="">
+                    <img onclick="infoPage(gamePages[2])" src="img/crystales/c3.png" alt="">
+                    <img onclick="infoPage(gamePages[2])" src="img/crystales/c4.png" alt="">
+                </div>
+    
+            <div class="TitleBox">
+                <h1>Crystales</h1>
+                <p>Aim the crystals at eachoter to create a complete network</p>
+               
+               <a href=https://github.com/Jprummel/MediaBites_2016_GameJam target="_blank">GitHub </a>
+               <a href="http://pakhuis.hosts.ma-cloud.nl/gamejam/" target="_blank"> - Play - </a>
+                <br>    
+               <a onclick="infoPage(gamePages[2])" >More info</a>
+           </div>
+           
+           <div class="ContentInfo">
+               <p>Type game: Unity 2D</p>
+               <p>Type project: Mediabites 24 hour gamejam</p>
+               <p>Time: 24 hours</p>
+               <p>Team: 4 devs 4 artists</p>
+               <p>Year: 2nd year</p>
+               
+           </div>
+
+
+        </div>
+
+        <!-- ///////////////// CRYSTALES MORE INFO PAGE \\\\\\\\\\\\\\\\\ -->        
+        
+        <div class="resize" id="cristales" style="visibility: hidden; ">
             <div class="TITLE">
                 Crystales
             </div>
@@ -476,42 +322,44 @@
             </div>
         </div>
 
+        <!-- _______________________________________________________ -->
+        <!-- ///////////////// MEANRACERS SHOWER TILE \\\\\\\\\\\\\\\\\ -->        
+        <!-- _______________________________________________________ -->
+    
+        <div class="RotateTiles" onclick="RotateAShower('shower', 2)">
 
-        <div id="framework" style="background-color: rgb(rgb(65, 126, 224)">
-            <div class="TITLE">
-                Typescript framework
+            
+            <div class="liveTile" onmouseover="nextTile(2, 0)">
+                <img onclick="infoPage(gamePages[3])" src="img/meanracers/inGameStart.jpg" alt="">
+                <img onclick="infoPage(gamePages[3])" src="img/meanracers/inGameMine.jpg" alt="">
+                <img onclick="infoPage(gamePages[3])" src="img/meanracers/inGameInvul.jpg" alt="">
             </div>
+    
+            <div class="TitleBox">
+                <h1>Meanracers</h1>
+                <p>Be faster than your friends and get to the top first using the terain and pickups</p>
+               
+               <a href="https://github.com/DarrenVs/NodeJavascriptFramework/tree/Game" target="_blank">GitHub</a>
+               <a href="https://www.youtube.com/watch?v=rPYeQvdNQHE"target="_blank"> - Play - </a>   
+                <br>                
+               <a onclick="infoPage(gamePages[3])">More info</a>
+           </div>
+           
+           <div class="ContentInfo">
+               <p>Type game: Javascript 2d</p>
+               <p>Type project: School project</p>
+               <p>Time: 4 weeks</p>
+               <p>Team: 3 devs 3 artists</p>
+               <p>Year: 2nd year</p>
+               
+           </div>
 
-            <div class="imgVieuw">
-                <div class="liveTile" id="infoTile">
-                    <img src="img/Typescript_framework/codeShot.jpg">
-                </div>
-            </div>
-
-            <div class="gameInfoBlack" id="infoTile"> 
-                <ul>
-                    <li> Type game: Typescript framework</li>
-                    <li> Type project: Free time / school project</li>
-                    <li> Platform: Web</li>
-                    <li> Time: W.I.P</li>
-                    <li> Team: 1 Dev</li>
-                    <li> Year: 3rd</li>
-                    <li> Play: <a href="https://github.com/DavidZwit/TypeScript_framework">Link</a></li>
-                    <li> Github: <a href="https://github.com/DavidZwit/TypeScript_framework">Link</a> </li>
-                </ul>
-            </div>
-
-            <div class="gameInfoBlack">
-                <p>Easy to use typescript framework based on my own idea's on how it should work</p>
-            </div>
-
-            <div class="gameInfoBlack">
-                <p>The whole project :)</p>
-            </div>
 
         </div>
+        
+        <!-- ///////////////// MEANRACERS MORE INFO PAGE \\\\\\\\\\\\\\\\\ -->    
 
-        <div id="meanracers" style="background-color: rgb(30, 80, 50); ">
+        <div class="resize" id="meanracers" style="visibility : hidden; ">
             <div class="TITLE">
                 Meanracers
             </div>
@@ -551,7 +399,109 @@
 
         </div>
 
-        <div id="astroids" style="background-color: rgb(30, 30, 30);">
+        <!-- _______________________________________________________ -->
+        <!-- ///////////////// TYPESCRIPT FRAMEWORK SHOWER TILE \\\\\\\\\\\\\\\\\ -->        
+        <!-- _______________________________________________________ -->
+
+        <div class="RotateTiles" onclick="RotateAShower('shower', 3)">
+
+            <div class="liveTile" onmouseover="nextTile(0, 0)">
+                <img onclick="infoPage(gamePages[4])" src="img/Typescript_framework/codeShot.jpg">
+            </div>
+
+            <div class="TitleBox">
+                <h1>Typescript framework</h1>
+                <p>A framework in typescript to easely create games</p>
+
+                <a href="https://github.com/DavidZwit/TypeScript_framework" target="blank">Gidhub</a>
+                <a href="" target="blank"> - Play - </a>
+                <br>
+                <a onclick="infoPage(gamePages[4])">More info</a>
+            </div>
+
+            <div class="ContentInfo">
+                <p>Type game: Typescript framework</p>
+                <p>Type project: Free time / school project</p>
+                <p>Time: W.I.P</p>
+                <p>Team: 1 dev</p>
+                <p>Year: 3rd year</p>
+
+            </div>
+
+        </div>
+        
+        <!-- /////////////////TYPESCRIPT FRAMEWORK MORE INFO PAGE \\\\\\\\\\\\\\\\\ -->
+
+        <div class="resize" id="framework" style=" visibility : hidden;">
+            <div class="TITLE">
+                Typescript framework
+            </div>
+
+            <div class="imgVieuw">
+                <div class="liveTile" id="infoTile">
+                    <img src="img/Typescript_framework/codeShot.jpg">
+                </div>
+            </div>
+
+            <div class="gameInfoBlack" id="infoTile"> 
+                <ul>
+                    <li> Type game: Typescript framework</li>
+                    <li> Type project: Free time / school project</li>
+                    <li> Platform: Web</li>
+                    <li> Time: W.I.P</li>
+                    <li> Team: 1 Dev</li>
+                    <li> Year: 3rd</li>
+                    <li> Play: <a href="https://github.com/DavidZwit/TypeScript_framework">Link</a></li>
+                    <li> Github: <a href="https://github.com/DavidZwit/TypeScript_framework">Link</a> </li>
+                </ul>
+            </div>
+
+            <div class="gameInfoBlack">
+                <p>Easy to use typescript framework based on my own idea's on how it should work</p>
+            </div>
+
+            <div class="gameInfoBlack">
+                <p>The whole project :)</p>
+            </div>
+
+        </div>
+
+        <!-- _______________________________________________________ -->
+        <!-- ///////////////// ASTROIDS WORK TILE \\\\\\\\\\\\\\\\\ -->        
+        <!-- _______________________________________________________ -->
+
+        <div class="RotateTiles" onclick="RotateAShower('shower', 4)">
+
+                <div class="liveTile" onmouseover="nextTile(0, 0)" item-width="54px">
+                    <img onclick="infoPage(gamePages[5])" src="img/Astroids//MainScreen.png">
+                    <img onclick="infoPage(gamePages[5])" src="img/Astroids/InGame.png">
+                </div>
+
+           <div class="TitleBox">
+                <h1>Astroids</h1>
+                <p>Kill the zombies and use pickups to strengthen yourself</p>
+               
+                <a href="https://github.com/Daniel95/WinterIsComing" target="_blank">GitHub</a>
+                <a href="http://davidzwitser.com/games/astriods/index.html"target="_blank"> - Play - </a>
+                <br>    
+                <a onclick="infoPage(gamePages[5])">More info</a>
+           </div>
+           
+           <div class="ContentInfo">
+               <p>Type game: ActionScript 2d Top down</p>
+               <p>Type project: School project</p>
+               <p>Time: 3 weeks</p>
+               <p>Team: 3 devs 3 artists</p>
+               <p>Year: 1st year</p>
+               
+           </div>
+
+
+        </div>
+
+        <!-- ///////////////// ASTROIDS MORE INFO PAGE \\\\\\\\\\\\\\\\\ -->        
+
+        <div class="resize" id="astroids" style=" visibility : hidden;">
 
             <div class="TITLE">
                 Astroids
@@ -590,7 +540,43 @@
             </div>
         </div>
 
-        <div id="pathFinding" style="background-color: rgb(192,200, 189); ">
+        <!-- _______________________________________________________ -->
+        <!-- ///////////////// PATH FINDING SHOWER TILE \\\\\\\\\\\\\\\\\ -->
+        <!-- _______________________________________________________ -->
+
+        <div class="RotateTiles" onclick="RotateAShower('shower', 5)">
+
+            <div class="liveTile" onmouseover="nextTile(1, 0)">
+                <img onclick="infoPage(gamePages[6])" src="img/python/pythonObstacles.jpg" alt="">
+                <img onclick="infoPage(gamePages[6])" src="img/python/ingame.jpg">
+            </div>
+
+
+
+            <div class="TitleBox">
+                <h1>Path finding</h1>
+                <p>Play with the little characters and see if they can find there way to their end goal</p>
+               
+                <a href="https://github.com/DavidZwit/Python-pathfinding" target="_blank">GitHub</a>
+                <a href="https://github.com/DavidZwit/Python-pathfinding/archive/master.zip"target="_blank"> - Play - </a>
+                <br>    
+                <a onclick="infoPage(gamePages[6])">More info</a>
+           </div>
+
+            <div class="ContentInfo">
+               <p>Type game: Python 2d</p>
+               <p>Type project: Owne time random experiment</p>
+               <p>Time: 2 weeks</p>
+               <p>Team: 1 dev</p>
+               <p>Year: 3rd year</p>
+               
+           </div>
+
+        </div>
+
+         <!-- ///////////////// PATH FINDING MORE INFO PAGE \\\\\\\\\\\\\\\\\ -->        
+
+        <div class="resize" id="pathFinding" style="visibility : hidden; ">
             <div class="TITLE">
                 Path finding
             </div>
@@ -629,7 +615,42 @@
 
         </div>
 
-        <div id="heroesJourney" style="background-color: grey">
+        <!-- _______________________________________________________ -->
+        <!-- ///////////////// HEROS JOURNEY SHOWER TILE \\\\\\\\\\\\\\\\\ -->        
+        <!-- _______________________________________________________ -->
+
+        <div class="RotateTiles" onclick="RotateAShower('shower', 6)">
+
+            <div class="liveTile" onmouseover="nextTile(1, 0)">
+                <img onclick="infoPage(gamePages[7])" src="img/HeroesJourney/HeroesJourney.jpg">
+            </div>
+
+
+
+            <div class="TitleBox">
+                <h1>Heroes Journey</h1>
+                <p>Follow the story and complete it your owne way</p>
+               
+                <a href="https://github.com/DavidZwit/HeroesJourney-c-" target="_blank">GitHub</a>
+                <a href="https://github.com/DavidZwit/HeroesJourney-c-/archive/master.zip"target="_blank"> - Play - </a>
+                <br>    
+                <a onclick="infoPage(gamePages[7])">More info</a>
+           </div>
+
+            <div class="ContentInfo">
+               <p>Type game: C++ console</p>
+               <p>Type project: Small project handeled ambitiously</p>
+               <p>Time: 1 week</p>
+               <p>Team: 1 dev 2 story creators</p>
+               <p>Year: 2nd year</p>
+               
+           </div>
+
+        </div>
+
+         <!-- ///////////////// HEROES JOURNEY MORE INFO PAGE \\\\\\\\\\\\\\\\\ -->        
+
+        <div class="resize" id="heroesJourney" style="visibility : hidden;">
 
             <div class="TITLE">
                 Heroes journey
@@ -667,7 +688,50 @@
             </div>
         </div>
 
-        <div id="pinball" style="background-color: rgb(76, 72, 124);">
+        <!-- _______________________________________________________ -->
+        <!-- ///////////////// PINBALL SHOWER TILE \\\\\\\\\\\\\\\\\ -->  
+        <!-- _______________________________________________________ -->
+              
+
+         <div class="RotateTiles" onclick="RotateAShower('shower', 7)">
+
+                <div class="liveTile" onmouseover="nextTile(1, 0)">
+                    <img onclick="infoPage(gamePages[8])" src="img/pinball/levelSelect.jpg">
+                    <img onclick="infoPage(gamePages[8])" src="img/pinball/levelPrevieuw.jpg">
+                    <img onclick="infoPage(gamePages[8])" src="img/pinball/inGame.jpg">
+                    <img onclick="infoPage(gamePages[8])" src="img/pinball/ingameRamp.jpg">
+                    <img onclick="infoPage(gamePages[8])" src="img/pinball/loginScreen.jpg">
+                    <img onclick="infoPage(gamePages[8])" src="img/pinball/startScreen.jpg">
+                </div>
+
+
+
+            <div class="TitleBox">
+                <h1>Pinball game</h1>.
+                
+                <p>Move the map and try to get the ball to the end</p>
+               
+                <a href="https://github.com/Daniel95/Labyrinth" target="_blank">GitHub</a>
+                <a href="http://14411.hosts.ma-cloud.nl/labyrinth/"target="_blank"> - Play - </a>
+                <br>    
+                <a  onclick="infoPage(gamePages[8])">More info</a>
+           </div>
+
+            <div class="ContentInfo">
+               <p>Type game: Unity 3D  3rd person</p>
+               <p>Type project: School project</p>
+               <p>Time: 4 weeks</p>
+               <p>Team: 3 devs</p>
+               <p>Year: 2nd year</p>
+               
+           </div>
+
+        </div>
+
+         <!-- ///////////////// PINBALL MORE INFO PAGE \\\\\\\\\\\\\\\\\ -->        
+
+
+        <div class="resize" id="pinball" style=" visibility : hidden;">
 
             <div class="TITLE">
                 Pinball
@@ -708,11 +772,19 @@
                 You can move  around by moving the map and make the map change by using space
             </div>
         </div>
+
+        <img  src="img/arrowLeft.png" class = "RotateLeft" onclick="RotateToNextPanel('shower', 1)"> </igm>
+        <img src="img/arrowRight.png" class = "RotateRight" onclick="RotateToNextPanel('shower', -1)"> </img>
+
+    </div>
+
+    <div id="moreInfoPage" style="background-color: rgb(200, 200, 200); ">
+        <!-- THE DIV WHERE I PUT THE INFORMATION ABOUT THE CURRENT TILE -->
     </div>
 
 
-
     <!--Scripts-->
+    <script src="js/navInfo.js"></script>
     <script src="script.js "></script>
     <script src="js/gamePages.js"></script>
     <script src="js/liveTiles.js"></script>

@@ -83,9 +83,26 @@
  }
 
 
-#buttonInfo {
+#navInfo {
     position: fixed; 
-    padding-left: 90%;
-    padding-top: 3%;
-    width: 10%;
+    padding-left: 80%;
+    padding-top: 2.5%;
+    width: 20%;
+}
+
+#navInfo img {
+    margin : 2%;
+}
+
+.showButtonInfo {
+    transition: box-shadow 1s ease-in-out;
+    transition: opacity 1s;
+    box-shadow: 0px 0px 50px red;
+    opacity: 1;
+}
+
+.hideButtonInfo {
+    transition: box-shadow 1s, font-size 1s;
+    transition: opacity 1s;
+    opacity : .1
 }

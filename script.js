@@ -38,14 +38,6 @@ function resize(forcedResize) {
             oldWidth = window.innerWidth;
         }
 };
-document.body.onresize = resize;
-
-var infoPageDiv = document.getElementById("moreInfoPage");
-function infoPage(page, dontScroll) {
-    infoPageDiv.innerHTML = page;
-    if (!dontScroll == true)
-        scrollWindow(4);
-}
 
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
 
@@ -93,7 +85,7 @@ var currentWindow = 0;
 var canScrollWindow = true;
 scrollWindow(0);
 
-var windowCount = fullScreenObjects.length;
+var windowCount = fullScreenObjects.length/2 -2;
 //----Scrolling-the-windows----\\
 function scrollWindow(part) {
     currentWindow = part;
@@ -106,6 +98,7 @@ function scrollWindow(part) {
     canScrollWindow = false;
     //Scroll and reset canScrollWindow when done scrolling
     scrollToPos(document.body, window.innerHeight * part, 7, () => canScrollWindow = true );
+    updateNavButtons();
 
     if (part == 0) { 
         try{ ActivateProfilePicture() }  
