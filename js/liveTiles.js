@@ -23,12 +23,6 @@ function rescaleLiveTiles () {
     }
 }
 
-
-function AddRotator(it) {
-
-    it.rotated["liveTiles"] = rescaleLiveTiles;
-}
-
 OnResize['resizeLiveTiles'] = rescaleLiveTiles;
 
 var c = -1;
@@ -59,7 +53,7 @@ function addObjectsToDict(tileName) {
                 currTile.scrollTop = _val;
             }
         });
-        console.log(currTile.style.height);
+        console.log(currTile.innerHeight);
         //Tile values
         tiles[currTile.id] = {
                 tile: currTile,

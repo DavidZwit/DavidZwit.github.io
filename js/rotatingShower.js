@@ -114,9 +114,6 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
         self.activeTile = _tile;
         this.scrollTop = _tile * spaceBetweenTiles;
     }
-
-    AddRotator(self);
-
 }
 
 function RotateAShower(name, tile) {
@@ -142,4 +139,3 @@ function RotateToNextPanel (name, next) {
 //______Creating one______\\
 
 this.shower = new RotatingShower("RotateTiles", 500);
-AddRotator(this.shower);
