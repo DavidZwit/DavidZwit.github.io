@@ -63,6 +63,7 @@ document.body.__defineSetter__("scrollPos", function (_val) {
     window.scrollTo(0, _val);
 });
 document.body.__defineGetter__("scrollPos", function() {
+    console.log( window.pageYOffset || window.scrollY || document.body.scrollTop);
     return window.pageYOffset || window.scrollY || document.body.scrollTop;
 })
 
