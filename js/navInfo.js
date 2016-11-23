@@ -6,7 +6,7 @@ let buttonInfo = {
     down : document.getElementById("downInfoButotn")
 };
 
-function activateInfoButtons (left = "", right = "", up = "", down = "" ) {
+function activateInfoButtons (left, right, up, down) {
 
     buttonInfo.left.className =  left.length > 0 ? "showButtonInfo" : "hideButtonInfo";
     buttonInfo.left.innerHTML = left;
