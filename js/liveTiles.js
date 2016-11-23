@@ -70,12 +70,15 @@ function nextTile(id, tileNumb) {
     try {
         if (tileNumb && typeof tileNumb == 'number') {
             editTile.currTile = tileNumb;
-            scrollToPos(editTile.tile, editTile.height * tileNumb, 50);
+
+            //scrollToPos(editTile.tile, editTile.height * tileNumb, 50);
+            editTile.tile.style.top = -(editTile.height * tileNumb) + "px";
         } else {
 
             editTile.currTile = (editTile.currTile < editTile.length - 1 ? editTile.currTile + 1 : 0);
 
-            scrollToPos(editTile.tile, editTile.height * editTile.currTile, 10);
+            //scrollToPos(editTile.tile, editTile.height * editTile.currTile, 10);
+            editTile.tile.top = -(editTile.height * editTile.currTile) + "px";
         }
     } catch (err) {}
 

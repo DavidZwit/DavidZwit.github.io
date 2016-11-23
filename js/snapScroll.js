@@ -83,7 +83,7 @@ function scrollWindow(part) {
 
     canScrollWindow = false;
     //Scroll and reset canScrollWindow when done scrolling
-    scrollToPos(document.body, window.innerHeight * part, 6, () => canScrollWindow = true );
+    scrollToPos(document.body, window.innerHeight * part, 6, function () { canScrollWindow = true} );
     updateNavButtons();
 
     if (part == 0) { 
