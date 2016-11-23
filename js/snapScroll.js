@@ -20,13 +20,14 @@ document.addEventListener('touchend', function (e) {
 
 
 document.onkeydown = function (e) {
-
     //window up key
     if (e.keyCode == 38) {
+        e.preventDefault();        
         nextWindow(-1);
     }
     //window down key
     if (e.keyCode == 40) {
+        e.preventDefault();        
         nextWindow(1);
     }
     //Space to scroll to start
@@ -36,10 +37,12 @@ document.onkeydown = function (e) {
 
     //left to scroll rotator left
     if (e.keyCode == 39) {
+        e.preventDefault();        
         rotateShower(-1);
     } 
     //right to scroll rotator right
     if (e.keyCode == 37) {
+        e.preventDefault();        
         rotateShower(1);
     }
 
@@ -50,9 +53,50 @@ document.onkeydown = function (e) {
 function rotateShower(dir) {
     
     if (currentWindow == 3) {
-    
-        scrollWindow(3);
         RotateToNextPanel('shower', dir);
-        nextInfoPage(dir);
+    }
+}
+
+
+//The window scrolling functionality
+
+Object.defineProperty(document.body, "scrollTop", {
+    get: function () {
+        return window.scrollY;
+    },
+    set : function (_val) {
+        window.scrollTo(0, _val);
+    }
+});
+
+var currentWindow = 0;
+var canScrollWindow = true;
+scrollWindow(0);
+
+var windowCount = fullScreenObjects.length/2 -2;
+//----Scrolling-the-windows----\\
+function scrollWindow(part) {
+    currentWindow = part;
+
+    //To prevent browsers from glitching when the window doesn't scroll properly'
+    if (canScrollWindow == true) {
+        setTimeout(() => canScrollWindow = true, 1400); 
+    }
+
+    canScrollWindow = false;
+    //Scroll and reset canScrollWindow when done scrolling
+    scrollToPos(document.body, window.innerHeight * part, 6, () => canScrollWindow = true );
+    updateNavButtons();
+
+    if (part == 0) { 
+        try{ ActivateProfilePicture() }  
+        catch (err) { }
+    }
+}
+
+function nextWindow(dir) {
+    if (currentWindow + dir >= 0 && currentWindow + dir <= windowCount) {
+
+        scrollWindow(currentWindow + dir);
     }
 }

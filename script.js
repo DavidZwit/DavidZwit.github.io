@@ -53,8 +53,6 @@ OnResize["updateSizes"] = function () {
 
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
 
-
-
 var ScrollVars = {
     scrollingObjects: {}
 }
@@ -81,37 +79,6 @@ function scrollToPos(_obj, _pos, _scrollSmoothness, _doneScrolling) {
 }
 
 
-var currentWindow = 0;
-var canScrollWindow = true;
-scrollWindow(0);
-
-var windowCount = fullScreenObjects.length/2 -2;
-//----Scrolling-the-windows----\\
-function scrollWindow(part) {
-    currentWindow = part;
-
-    //To prevent browsers from glitching when the window doesn't scroll properly'
-    if (canScrollWindow == true) {
-        setTimeout(() => canScrollWindow = true, 1400); 
-    }
-
-    canScrollWindow = false;
-    //Scroll and reset canScrollWindow when done scrolling
-    scrollToPos(document.body, window.innerHeight * part, 7, () => canScrollWindow = true );
-    updateNavButtons();
-
-    if (part == 0) { 
-        try{ ActivateProfilePicture() }  
-        catch (err) { }
-    }
-}
-
-function nextWindow(dir) {
-    if (currentWindow + dir >= 0 && currentWindow + dir <= windowCount) {
-
-        scrollWindow(currentWindow + dir);
-    }
-}
 
 
 //----The-scroll-loop-that-gets-activated-when-needed----\\

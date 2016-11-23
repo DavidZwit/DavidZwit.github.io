@@ -121,6 +121,9 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
 
 function RotateAShower(name, tile) {
     mainSelf[name].RotateShowerToTile(tile);
+
+    //Loading the coresponding info page
+    infoPage(gamePages[tile +1], true);     
 }
 
 function RotateToNextPanel (name, next) {
@@ -129,6 +132,9 @@ function RotateToNextPanel (name, next) {
 
     if (newTile >= rotator.amoundOfTiles) newTile = 0;
     else if (newTile < 0) newTile = rotator.amoundOfTiles-1;
+
+    //Loading the coresponding info page
+    infoPage(gamePages[newTile +1], true);   
 
     rotator.RotateShowerToTile(newTile);
 }

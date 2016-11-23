@@ -18,6 +18,8 @@ function infoPage(page, dontScroll) {
     infoPageDiv.innerHTML = page;
     if (!dontScroll == true)
         scrollWindow(4);
+        
+    exeDelegate(OnResize);    
 }
 
 let currInfoPage = 4;
