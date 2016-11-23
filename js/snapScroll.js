@@ -19,7 +19,8 @@ document.addEventListener('touchend', function (e) {
 });
 
 
-addEventListener('keydown', function (e) {
+document.onkeydown = function (e) {
+
     //window up key
     if (e.keyCode == 38) {
         nextWindow(-1);
@@ -32,5 +33,26 @@ addEventListener('keydown', function (e) {
     if (e.keyCode == 32) {
         scrollWindow(0);
     }
-});
+
+    //left to scroll rotator left
+    if (e.keyCode == 39) {
+        rotateShower(-1);
+    } 
+    //right to scroll rotator right
+    if (e.keyCode == 37) {
+        rotateShower(1);
+    }
+
+};
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
+
+//Just to rotatate the current shower
+function rotateShower(dir) {
+    
+    if (currentWindow == 3) {
+    
+        scrollWindow(3);
+        RotateToNextPanel('shower', dir);
+        nextInfoPage(dir);
+    }
+}

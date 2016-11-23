@@ -35,7 +35,6 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
         },
 
         set: function (_val) {
-            //if (offsetTop + biggestWorkTileSize <= window.innerHeight) {
 
                 var tileLeft = _val + middleOfTile;
                 //Loop throug all the tiles
@@ -60,7 +59,7 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
                     //currTile.style.zIndex = Math.abs(newSize)/400;
 
                     //If it's still in the window change it's position else hide it
-                    if (thisLeft < window.innerWidth - window.innerWidth / 6) {
+                    if (thisLeft < window.innerWidth - window.innerWidth / 4) {
 
                         currTile.style.left = thisLeft + window.innerWidth/6 + "px";
                         currTile.style.visibility = "visible";
@@ -73,12 +72,6 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
                 }
                 currRotation = _val;
                 exeDelegate(self.rotated);
-        
-            //} 
-            /*else {
-                for (var i = liveTiles.length -1; i >= 0; i--) liveTiles[i].style.visibility = "hidden";
-                console.log("hide yourself!!!");
-            }*/
         }
 
     });
@@ -119,7 +112,7 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
         //function to call when you need to rotate the thing
     this.RotateShowerToTile = function (_tile) {
         self.activeTile = _tile;
-        scrollToPos(self, _tile * spaceBetweenTiles, 7, DoneRotating);
+        this.scrollTop = _tile * spaceBetweenTiles;
     }
 
     AddRotator(self);
@@ -140,3 +133,7 @@ function RotateToNextPanel (name, next) {
     rotator.RotateShowerToTile(newTile);
 }
 
+//______Creating one______\\
+
+this.shower = new RotatingShower("RotateTiles", 500);
+AddRotator(this.shower);
