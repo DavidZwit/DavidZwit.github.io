@@ -80,7 +80,7 @@ function scrollWindow(part) {
 
     //To prevent browsers from glitching when the window doesn't scroll properly'
     if (canScrollWindow == true) {
-        setTimeout(() => canScrollWindow = true, 1400); 
+        setTimeout(function () { canScrollWindow = true}, 1400); 
     }
 
     canScrollWindow = false;
