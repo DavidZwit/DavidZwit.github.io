@@ -45,21 +45,18 @@ function addObjectsToDict(tileName) {
         var currTile = tileAsElement[i];
         currTile.id = "tile:" + i;
 
-        Object.defineProperty(currTile, "scrollPos", {
-            get: function () {
-                return currTile.scrollTop; 
-            },
-            set: function (_val) {
-                currTile.scrollTop = _val;
-            }
+        currTile.__defineSetter__("scrollPos", function (_val) {
+            currTile.scrollTop = _val;
         });
-        console.log(currTile.innerHeight);
-        //Tile values
+        currTile.__defineGetter__("scrollPos", function () {
+            return currTile.scrollTop;
+        });
+                
         tiles[currTile.id] = {
-                tile: currTile,
-                length: currTile.getElementsByTagName("img").length,
-                currTile: 0,
-                height: currTile.offsetHeight
+            tile: currTile,
+            length: currTile.getElementsByTagName("img").length,
+            currTile: 0,
+            height: currTile.offsetHeight
         }
         //end tile values
     }
