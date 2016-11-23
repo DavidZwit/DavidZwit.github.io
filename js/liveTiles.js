@@ -33,7 +33,7 @@ OnResize['resizeLiveTiles'] = rescaleLiveTiles;
 
 var c = -1;
 Update["moveTiles"] = function () {
-    if (frameCount % 50 == 0) {
+    if (frameCount % 1 == 0) {
         if (c < tileAsElement.length - 1) c++;
         else c = 0;
 
@@ -51,6 +51,15 @@ function addObjectsToDict(tileName) {
         var currTile = tileAsElement[i];
         currTile.id = "tile:" + i;
 
+        Object.defineProperty(currTile, "scrollPos", {
+            get: function () {
+                return currTile.scrollTop; 
+            },
+            set: function (_val) {
+                currTile.scrollTop = _val;
+            }
+        });
+        console.log(currTile.style.height);
         //Tile values
         tiles[currTile.id] = {
                 tile: currTile,

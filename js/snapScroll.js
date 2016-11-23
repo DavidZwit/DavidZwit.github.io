@@ -60,9 +60,9 @@ function rotateShower(dir) {
 
 //The window scrolling functionality
 
-Object.defineProperty(document.body, "scrollTop", {
+Object.defineProperty(document.body, "scrollPos", {
     get: function () {
-        return window.pageYOffset;
+        return window.scrollY || window.pageYOffset || document.body.scrollTop;
     },
     set : function (_val) {
         window.scrollTo(0, _val);

@@ -88,16 +88,16 @@ function scrollObjects() {
     for (var i in ScrollVars.scrollingObjects) {
         objCount++;
         var scrollObj = ScrollVars.scrollingObjects[i];
-        var distanceToTarget = scrollObj.targetTop - scrollObj.obj.scrollTop;
+        var distanceToTarget = scrollObj.targetTop - scrollObj.obj.scrollPos;
         var scrollVelocity = distanceToTarget / scrollObj.scrollSmoothness;
 
         if (distanceToTarget > 0.5 || distanceToTarget < -0.5 || scrollObj.cancleScroll) {
             if (scrollVelocity > 1 || scrollVelocity < -1)
-                scrollObj.obj.scrollTop += scrollVelocity;
-            else scrollObj.obj.scrollTop += distanceToTarget > 0 ? 1 : -1;
+                scrollObj.obj.scrollPos += scrollVelocity;
+            else scrollObj.obj.scrollPos += distanceToTarget > 0 ? 1 : -1;
         } else {
 
-            scrollObj.obj.scrollTop = scrollObj.targetTop;
+            scrollObj.obj.scrollPos = scrollObj.targetTop;
             try { scrollObj.doneScrolling(); } 
             catch (err) {}
             delete ScrollVars.scrollingObjects[scrollObj.obj.id];
