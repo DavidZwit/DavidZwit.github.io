@@ -7,7 +7,7 @@ var endTouchScroll = 0;
 var startTouchScroll = 0;
 
 document.addEventListener('touchstart', function (e) {
-    startTouchScroll = e.changedTouches[0].clientY;
+    startTouchScroll = e.changedTouches[0].clientY;                             a
 });
 
 document.addEventListener('touchend', function (e) {
@@ -21,12 +21,12 @@ document.addEventListener('touchend', function (e) {
 
 document.onkeydown = function (e) {
     //window up key
-    if (e.keyCode == 38) {
+    if (e.keyCode == 38 || e.keyCode == 87) {
         e.preventDefault();        
         nextWindow(-1);
     }
     //window down key
-    if (e.keyCode == 40) {
+    if (e.keyCode == 40 || e.keyCode == 83) {
         e.preventDefault();        
         nextWindow(1);
     }
@@ -36,12 +36,12 @@ document.onkeydown = function (e) {
     }
 
     //left to scroll rotator left
-    if (e.keyCode == 39) {
+    if (e.keyCode == 39 || e.keyCode == 68) {
         e.preventDefault();        
         rotateShower(-1);
     } 
     //right to scroll rotator right
-    if (e.keyCode == 37) {
+    if (e.keyCode == 37 || e.keyCode == 65) {
         e.preventDefault();        
         rotateShower(1);
     }
