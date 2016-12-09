@@ -3,12 +3,12 @@
 
         Awesome you're looking at my code :).
 
-        Yes i made this site without any plug-ins 
+        Yes i made this site without any plug-ins
         and yes the banner image is a screenshot of the code that powers this site :)
 
         I made this site from scratch in an atempt to show off my programming skills so I hope it was worth the offort!
 
-        Take a look around and try to figure out if the JavaScript code is readable or not :p 
+        Take a look around and try to figure out if the JavaScript code is readable or not :p
 
         ▂▃▄▅▆▇█▓▒░░▒▓█▇▆▅▄▃▂
 
@@ -29,7 +29,7 @@
         ░██▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
         ░░████████████░░░█████████████████
 
-        (some random text emoji to stand out :p)    
+        (some random text emoji to stand out :p)
     -->
 
 
@@ -60,6 +60,13 @@
 <body>
 
     <!-- ///////////////// navigation UI \\\\\\\\\\\\\\\\\ -->
+    <img src="img/loadSceen.gif" style="position: fixed; height: 100%;" id="loadingScreen">
+    <script>
+        var loadGif = document.getElementById("loadingScreen");
+        window.addEventListener("load", function () {
+            loadGif.style.visibility = "hidden";
+        });
+    </script>
 
     <div id="navInfo">
         <img src="img/arrowKeyUp.png" id="upInfoButotn" onclick="nextWindow(-1);" style="margin-left: 5.5pc;">

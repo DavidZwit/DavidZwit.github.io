@@ -20,7 +20,7 @@ function RotatingShower(_itemsID, _spaceBetweenTiles, _yPos, _aspectRatioWindows
     var liveTiles = document.getElementsByClassName(_itemsID);
     this.amoundOfTiles = liveTiles.length;
     var spaceBetweenTiles = _spaceBetweenTiles || 400;
-    var aspectRatio = _aspectRatioWindows || 1.5;
+    var aspectRatio = _aspectRatioWindows || 1.
     var yPos = yPos || 3;
     var workTileFunct = _biggestWorkTileFunct || false;
     var backgroundTileSize = _backgroundTileSize || 100;
