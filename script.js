@@ -22,7 +22,7 @@ function scroll() {
 }
 window.onscroll = scroll;
 
-//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\    
+//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
 
 //----Resize-objects-on-window-resize----\\
 var oldHeight = window.innerHeight;
@@ -68,7 +68,7 @@ function scrollToPos(_obj, _pos, _scrollSmoothness, _doneScrolling) {
 
     if (!Update.scrollToPos) Update["scrollToPos"] = scrollObjects;
 
-    
+
     ScrollVars.scrollingObjects[_obj.id] = {
         obj: _obj,
         targetTop: _pos,
@@ -98,7 +98,7 @@ function scrollObjects() {
         } else {
 
             scrollObj.obj.scrollPos = scrollObj.targetTop;
-            try { scrollObj.doneScrolling(); } 
+            try { scrollObj.doneScrolling(); }
             catch (err) {}
             delete ScrollVars.scrollingObjects[scrollObj.obj.id];
         }
@@ -112,7 +112,7 @@ function scrollObjects() {
 
 var frameCount = 0;
 
-window.addEventListener('load', function () {
+function startCode () {
     //--Executeing the resize to ready everything for load--\\;
     exeDelegate(OnResize);
     //---Starting start :)---\\
@@ -125,4 +125,4 @@ window.addEventListener('load', function () {
     }();
     //delete Start;
 
-});
+};

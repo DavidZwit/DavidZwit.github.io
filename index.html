@@ -60,12 +60,13 @@
 <body>
 
     <!-- ///////////////// navigation UI \\\\\\\\\\\\\\\\\ -->
-    <img src="img/loadSceen.gif" style="position: fixed; width: 100%;" id="loadingScreen">
+    <img src="img/loadScreen.gif" style="position: fixed; width: 100%; z-index: 5;" id="loadingScreen">
     <script>
         var loadGif = document.getElementById("loadingScreen");
-        window.addEventListener("load", function () {
+        setInterval(function () {
             loadGif.style.visibility = "hidden";
-        });
+            startCode();
+        }, 2000);
     </script>
 
     <div id="navInfo">
